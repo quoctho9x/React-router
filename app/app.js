@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory,IndexLink  } from 'react-router'
+
+import Container from './component/Container'
+import NotFound from './component/NotFound';
+import Home from './component/Home';
+import NamedComponents from './component/NamedComponents';
+import Title from './component/Title';
+import About from './component/About';
+import {Address, Instagram, TwitterFeed, Query}  from './component/Address';
+
+
 class App extends Component {
     render() {
         return (
-            <Router history={browserHistory}>
+            <Router history={hashHistory}>
                 <Route path='/' component={Container}>
                     <IndexRoute component={Home} />
                     <Route path='/address' component={Address}>
@@ -13,7 +23,7 @@ class App extends Component {
                     </Route>
                     <Route path='/about(/:name)' component={About} />
                     <Route path='/namedComponent' component={NamedComponents}>
-                        <IndexRoute components={{ title: Title, subTitle: SubTitle, con: Con }} />
+                        <IndexRoute components={{ title: Title}} />
                     </Route>
                     <Route path='*' component={NotFound} />
                 </Route>
@@ -21,16 +31,18 @@ class App extends Component {
         )
     }
 }
-const Home = () => <h1>Hello from Home!aaasdfasd</h1>
-const About = (props) => (
+/*const Home = () => <h1>Hello from Home!aaasdfasd</h1>*/
+/*const About = (props) => (
     <div>
         <h3>Welcome to the About Page</h3>
         { props.params.name && <h2>Hello, {props.params.name}</h2>}
     </div>
-)
-const NotFound = () => (
-    <h1>404.. This page is not found!</h1>)
-const Nav = () => (
+)*/
+/*const NotFound = () => (
+    <h1>404.. This page is not found!</h1>
+)*/
+
+/*const Nav = () => (
     <div>
         <IndexLink activeClassName='active' to='/'>Home</IndexLink >&nbsp;
         <IndexLink activeClassName='active' to='/address'>Address</IndexLink >&nbsp;
@@ -38,10 +50,13 @@ const Nav = () => (
         <IndexLink activeClassName='active' to='/namedComponent'>Named Components</IndexLink>
     </div>
 )
+
 const Container = (props) => <div>
     <Nav />
     {props.children}
-</div>
+</div>*/
+
+/*
 const Instagram = () => <h3>Instagram Feed</h3>
 const TwitterFeed = () => <h3>Twitter Feed</h3>
 const Query = (props) => (
@@ -49,14 +64,15 @@ const Query = (props) => (
 )
 const Address = (props) => <div>
     <br />
-   {/* <IndexLink  activeClassName='active' to='/address'>Twitter Feed</IndexLink>&nbsp;*/}
+   {/!* <IndexLink  activeClassName='active' to='/address'>Twitter Feed</IndexLink>&nbsp;*!/}
     <IndexLink  activeClassName='active' to='/address/instagram'>Instagram Feed</IndexLink>&nbsp;
     <IndexLink  activeClassName='active' to={{pathname: '/address/query', query: { message: 'Hello from Route Query'}}}>router query</IndexLink>&nbsp;
     <h1>We are located at 555 Jackson St.</h1>
     {props.children}
 </div>
+*/
 
-const NamedComponents = (props) => (
+/*const NamedComponents = (props) => (
     <div>
         {props.title}<br />
         {props.subTitle}<br />
@@ -71,5 +87,5 @@ const SubTitle = () => (
 )
 const Con = () => (
     <h1>Hello from con Component</h1>
-)
+)*/
 export default App
