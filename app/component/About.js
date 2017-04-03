@@ -14,53 +14,47 @@ class About extends Component {
 
 
 // Let's create a "real-time search" component
+class SearchExample extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {searchString: ''};
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-var SearchExample = React.createClass({
-
-    getInitialState: function () {
-        return {searchString: ''};
-    },
-
-    handleChange: function (e) {
-
-        // If you comment out this line, the text box will not change its value.
-        // This is because in React, an input cannot change independently of the value
-        // that was assigned to it. In our case this is this.state.searchString.
-
+    handleChange(e) {
         this.setState({searchString: e.target.value});
-    },
+    }
 
-    render: function () {
-
+    render() {
         var libraries = this.props.items,
             searchString = this.state.searchString.trim().toLowerCase();
-
+        const libraries__list = libraries.map(function (l, index) {
+            return <li key={index}>{l.name} <a href={l.url}>{l.url}</a></li>
+        })
 
         if (searchString.length > 0) {
-
             // We are searching. Filter the results.
-
             libraries = libraries.filter(function (l) {
                 return l.name.toLowerCase().match(searchString);
             });
-
         }
 
-        return <div>
-            <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here"/>
+        return(
+            <div>
+                <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here"/>
+                <ul className="list__about">
+                    { libraries.map(function (l, index) {
+                        return <li key={index}>{l.name} <a href={l.url}>{l.url}</a></li>
+                    })}
+                </ul>
+             {/*   <ul className="list__about">
+                    {libraries__list}
+                </ul>*/}
 
-            <ul>
-
-                { libraries.map(function (l,index) {
-                    return <li key={index}>{l.name} <a href={l.url}>{l.url}</a></li>
-                }) }
-
-            </ul>
-
-        </div>;
-
+            </div>
+        )
     }
-});
+}
 
 
 var libraries = [

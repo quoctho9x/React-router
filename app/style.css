@@ -17,7 +17,6 @@ html{
 }
 
 body{
-    padding:60px;
     text-align: center;
 }
 
@@ -41,8 +40,7 @@ ul{
     width: 420px;
     text-align: left;
 }
-
-ul li{
+ul.list__about li{
     display: block;
     padding: 15px 20px;
     background-color: #F8F8F8;
@@ -53,7 +51,7 @@ ul li{
     transition: 0.3s;
 }
 
-ul li a{
+ul.list__about li a{
     position: absolute;
     left: 160px;
     font-size: 12px;
@@ -61,7 +59,7 @@ ul li a{
     color: #969d9d;
 }
 
-ul li:hover{
+ul.list__about li:hover{
     background-color:#d8f2f1;
 }
 

@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 
 class Home extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {bien:'quoc tho dep trai', date: new Date(),isToggleOn: true};
+        this.state = {bien: 'toggle', date: new Date(), isToggleOn: true};
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.tick = this.tick.bind(this);
         this.update = this.update.bind(this);
     }
+
     componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
@@ -29,54 +30,53 @@ class Home extends Component {
 
     update() {
         this.setState(prevState => ({
-            bien: 'UD to quoc loc',
+            bien: 'toggle active',
             isToggleOn: !prevState.isToggleOn
         }));
 
     }
+
     render() {
         return (
             <div>
-                <h1>Hello from Home!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                <h1>Hello Home page!</h1>
+                <h2>Timer {this.state.date.toLocaleTimeString()}</h2>
                 <Child bien={this.state.bien}/>
-                <Button update={this.update} value={this.state.isToggleOn ? 'quoc tho' : 'quoc loc'}/>
-
-                <h2>demo list</h2>
-                <Blog posts={posts} />
-            </div>
-        )
-    }
-}
-
-class Button extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <div>
-                <input onClick={this.props.update} type="button" value={this.props.value}/>
-            </div>
-        )
-
-    }
-}
-class Child extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
+                <Button update={this.update} value={this.state.isToggleOn ? 'Show list' : 'hide list'}/>
                 <div>
-                    <h1>this is child {this.props.bien}</h1>
+                    <h2>demo list</h2>
+                    <Blog posts={posts}/>
                 </div>
-            )
 
+            </div>
+        )
     }
 }
 
+class Button extends Component {
+    constructor(props) {
+        super(props)
+    }
 
+    render() {
+        return (
+            <input className="btn btn-default" onClick={this.props.update} type="button" value={this.props.value}/>
+        )
+    }
+}
+class Child extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <span>Button {this.props.bien}: </span>
+        )
+    }
+}
+
+/*demo list*/
 function Blog(props) {
     const sidebar = (
         <ul>
@@ -95,7 +95,7 @@ function Blog(props) {
     );
     return (
         <div>
-            {sidebar}
+            {/* {sidebar}*/}
             <hr />
             {content}
         </div>
@@ -103,10 +103,10 @@ function Blog(props) {
 }
 
 const posts = [
-    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-    {id: 2, title: 'Hello World', content: 'Welcome to learning React!'},
-    {id: 3, title: 'Hello World', content: 'Welcome to learning React!'},
-    {id: 4, title: 'Installation', content: 'You can install React from npm.'}
+    {id: 1, title: '1 Hello World', content: 'Welcome to learning React!'},
+    {id: 2, title: '2 How to learn', content: 'read document about react'},
+    {id: 3, title: '3 what is first', content: 'start with Component, state, props...'},
+    {id: 4, title: '4 Installation', content: 'You can install React from npm.'}
 ];
 export default Home
 
