@@ -8,7 +8,7 @@ class Nav extends Component{
                 <IndexLink activeClassName='active' to='/'>Home</IndexLink >&nbsp;
                 <IndexLink activeClassName='active' to='/address'>Address</IndexLink >&nbsp;
                 <IndexLink activeClassName='active' to='/about'>About</IndexLink >&nbsp;
-                <IndexLink activeClassName='active' to='/namedComponent'>Named Components</IndexLink>
+                <IndexLink activeClassName='active' to='/order'>Order</IndexLink>
             </div>
         )
     }
