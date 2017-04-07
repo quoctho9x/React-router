@@ -1,4 +1,5 @@
 // ./src/car/car.component.jsx
+import ReactDOM from 'react-dom'
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
 
@@ -12,8 +13,38 @@ class Car extends Component {
         )
     }
 }
-
-
+class FormAdd extends Component {
+    render() {
+        return (
+            <div>
+                <form>
+                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
+                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
+                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
+                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
+                    Last name: <input type="text" name="LastName" value="Mouse"/><br/>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </div>
+        )
+    }
+}
+class Addnode extends Component {
+    constructor(props){
+        super(props)
+        this.addnode = this.addnode.bind(this);
+    }
+    addnode(){
+        ReactDOM.render(<FormAdd />,document.getElementById('addnode'))
+    }
+    render() {
+        return (
+            <div>
+                <a href="#" className="btn btn-default" onClick={this.addnode}>Add New</a>
+            </div>
+        )
+    }
+}
 class List extends Component {
     constructor(props){
         super(props)
@@ -48,6 +79,8 @@ class List extends Component {
         return (
             <div>
                 <input type="text" value={this.state.searchString} onChange={this.handleChange.bind(this)} placeholder="Type here"/>
+                <Addnode />
+                <div id="addnode"></div>
                 <div className="list-group">
                   {/*  {carNode}*/}
                     {
