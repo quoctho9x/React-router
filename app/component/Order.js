@@ -56,7 +56,8 @@ var Service = React.createClass({
 
     render: function () {
         return <p className={ this.state.active ? 'active' : '' } onClick={this.clickHandler}>
-                    {this.props.name} <b>${this.props.price.toFixed(2)}</b>
+                    {this.props.name}
+                    <b>${this.props.price.toFixed(2)}</b>
                </p>;
     }
 

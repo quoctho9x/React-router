@@ -28,9 +28,10 @@ class SearchExample extends Component {
     render() {
         var libraries = this.props.items,
             searchString = this.state.searchString.trim().toLowerCase();
-        const libraries__list = libraries.map(function (l, index) {
+
+       /* const libraries__list = libraries.map(function (l, index) {
             return <li key={index}>{l.name} <a href={l.url}>{l.url}</a></li>
-        })
+        })*/
 
         if (searchString.length > 0) {
             // We are searching. Filter the results.
@@ -43,9 +44,11 @@ class SearchExample extends Component {
             <div>
                 <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here"/>
                 <ul className="list__about">
-                    { libraries.map(function (l, index) {
+                    {
+                        libraries.map(function (l, index) {
                         return <li key={index}>{l.name} <a href={l.url}>{l.url}</a></li>
-                    })}
+                        })
+                    }
                 </ul>
              {/*   <ul className="list__about">
                     {libraries__list}

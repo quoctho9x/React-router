@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Router, Route, Link, IndexRoute, hashHistory, browserHistory, IndexLink} from 'react-router'
+import {Router, Route, Link, IndexRoute, hashHistory, browserHistory, IndexLink,Redirect} from 'react-router'
 
 class Container extends Component {
     render() {
@@ -16,12 +16,6 @@ class Nav extends Component {
     render() {
         return (
             <div>
-                {/*<IndexLink activeClassName='active' to='/'>Home</IndexLink >&nbsp;
-                <IndexLink activeClassName='active' to='/address'>Address</IndexLink >&nbsp;
-                <IndexLink activeClassName='active' to='/about'>About</IndexLink >&nbsp;
-                <IndexLink activeClassName='active' to='/order'>Order</IndexLink>*/}
-
-
                     <nav className="navbar navbar-default">
                         <div className="container-fluid">
                             <div className="navbar-header">
@@ -34,6 +28,9 @@ class Nav extends Component {
                                     <li><IndexLink activeClassName='active' to='/address'>Address</IndexLink ></li>
                                     <li>  <IndexLink activeClassName='active' to='/about'>About</IndexLink ></li>
                                     <li> <IndexLink activeClassName='active' to='/order'>Order</IndexLink></li>
+                                    <li>  <IndexLink activeClassName='active' to='/login'>login</IndexLink></li>
+                                    <li>  <IndexLink activeClassName='active' to='/cars'>Car</IndexLink></li>
+
                                 </ul>
                             </div>
                         </div>

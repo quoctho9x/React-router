@@ -20,7 +20,7 @@ body{
     text-align: center;
 }
 
-input[type=text]{
+input[type=text], input[type=password]{
     text-align: center;
     font: inherit;
     border: 6px solid #a3d8d6;
