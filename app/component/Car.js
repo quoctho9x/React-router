@@ -2,7 +2,7 @@
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
-
+var list;
 class Car extends Component {
     render() {
         return (
@@ -14,16 +14,41 @@ class Car extends Component {
     }
 }
 class FormAdd extends Component {
+    constructor(props){
+        super(props)
+        this.state={obj:{}}
+    }
+    send(){
+        var last_child =list.state.cars[list.state.cars.length-1];
+        var objnew = {};
+
+        objnew.id = last_child.id+1;
+        objnew.url = this.refs.url.value;
+        objnew.name = this.refs.name.value;
+        objnew.year = '';
+        objnew.model = '';
+        objnew.make = '';
+        objnew.price = '';
+        list.state.cars.push(objnew);
+        list.setState(list.state.cars);
+
+        /*console.log("function send");
+        console.log(last_child);
+        console.log(objnew);
+        console.log(list.state.cars);*/
+        ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
+    }
     render() {
         return (
             <div>
                 <form>
-                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
-                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
-                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
-                    First name: <input type="text" name="FirstName" value="Mickey"/><br/>
-                    Last name: <input type="text" name="LastName" value="Mouse"/><br/>
-                    <input type="submit" value="Submit"/>
+                    Url: <input type="text" ref="url" placeholder="Url"/><br/>
+                    Name: <input type="text" ref="name" placeholder="name"/><br/>
+                   {/* Year: <input type="text" placeholder="year"/><br/>
+                    Model: <input type="text" placeholder="model"/><br/>
+                    Make: <input type="text" placeholder="make"/><br/>
+                    Price: <input type="text" placeholder="price"/><br/>*/}
+                    <input type="button" value="Submit" onClick={this.send.bind(this)}/>
                 </form>
             </div>
         )
@@ -48,8 +73,17 @@ class Addnode extends Component {
 class List extends Component {
     constructor(props){
         super(props)
-        this.state={searchString:''}
+        this.state={searchString:'',cars:[]}
+        list = this;
+        this.componentWillMount  =this.componentWillMount.bind(this);
+
     }
+    componentWillMount () {
+        this.state.cars=this.props.items
+        this.setState(this.state);
+       // console.log("array :"+  this.state.cars);
+    }
+
     handleChange(e){
         this.setState({searchString:e.target.value})
     }
@@ -72,7 +106,7 @@ class List extends Component {
         });*/
 
         if(searchString.length > 0){
-            cars = cars.filter(function (list) {
+            this.state.cars = this.state.cars.filter(function (list) {
                 return list.name.toLowerCase().match(searchString);
             })
         }
@@ -84,7 +118,7 @@ class List extends Component {
                 <div className="list-group">
                   {/*  {carNode}*/}
                     {
-                        cars.map((car) => {
+                        this.state.cars.map((car) => {
                         return (
                             <IndexLink
                                 activeClassName='active'
