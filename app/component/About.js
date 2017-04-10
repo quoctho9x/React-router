@@ -42,7 +42,7 @@ class SearchExample extends Component {
 
         return(
             <div>
-                <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here"/>
+                <input type="text" value={this.state.searchString} className="text_box" onChange={this.handleChange} placeholder="Type here"/>
                 <ul className="list__about">
                     {
                         libraries.map(function (l, index) {

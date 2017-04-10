@@ -1,26 +1,39 @@
-a{
-     color: #53acff;
- }
+/*-------custom---------*/
+a {
+    color: #53acff;
+}
+
 .active {
-    color:red;
+    color: red;
 }
 
 * {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
-html{
-    font:14px normal Arial, sans-serif;
-    color:#626771;
-    background-color:#fff;
+html {
+    font: 14px normal Arial, sans-serif;
+    color: #626771;
+    background-color: #fff;
 }
 
-body{
+body {
     text-align: center;
 }
+h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
-input[type=text], input[type=password]{
+/*input[type=text], input[type=password] {
+    text-align: center;
+    font: inherit;
+    outline: none;
+    display: block;
+    color: #7B8585;
+}*/
+.text_box{
     text-align: center;
     font: inherit;
     border: 6px solid #a3d8d6;
@@ -31,16 +44,23 @@ input[type=text], input[type=password]{
     outline: none;
     display: block;
     color: #7B8585;
-    margin: 0 auto 20px;
+    margin: auto;
 }
+.wrap__btn{
+    display: inline-block;
+    margin-left: 10px;
+}
+/*-------end custom---------*/
 
-ul{
+/*-------about---------*/
+ul.list__about {
     list-style: none;
     display: inline-block;
     width: 420px;
     text-align: left;
 }
-ul.list__about li{
+
+ul.list__about li {
     display: block;
     padding: 15px 20px;
     background-color: #F8F8F8;
@@ -51,7 +71,7 @@ ul.list__about li{
     transition: 0.3s;
 }
 
-ul.list__about li a{
+ul.list__about li a {
     position: absolute;
     left: 160px;
     font-size: 12px;
@@ -59,24 +79,21 @@ ul.list__about li a{
     color: #969d9d;
 }
 
-ul.list__about li:hover{
-    background-color:#d8f2f1;
+ul.list__about li:hover {
+    background-color: #d8f2f1;
 }
 
+/*-------end about---------*/
 
-h1{
-    font-size:18px;
-    margin-bottom:20px;
-}
-
-#services{
+/*-------services---------*/
+#services {
     list-style: none;
     display: inline-block;
     width: 340px;
     text-align: left;
 }
 
-#services p{
+#services p {
     display: block;
     padding: 15px 20px;
     background-color: #F8F8F8;
@@ -88,7 +105,8 @@ h1{
     transition: 0.3s;
 }
 
-#services p b{
+
+#services p b {
     position: absolute;
     right: 28px;
     line-height: 16px;
@@ -97,21 +115,66 @@ h1{
     text-align: right;
 }
 
-#services p:hover{
-    background-color:#d8f2f1;
+#services p:hover {
+    background-color: #d8f2f1;
 }
 
-#services p.active{
-    color:#fff;
-    background-color:#41c7c2;
+#services p.active {
+    color: #fff;
+    background-color: #41c7c2;
 }
 
-#services p.active b{
+#services p.active b {
     color: #fff;
 }
 
-#total{
+#total {
     background: none !important;
     cursor: default !important;
     padding-top: 10px !important;
 }
+
+/*-------end service---------*/
+
+/*-------cars---------*/
+.items{
+    margin: 10px;
+}
+.items .list__group{
+    width: 50%;
+    margin: auto;
+}
+.items .item{
+    display: block;
+}
+.items .item .des__img{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.items .wrap_item{
+    margin: auto;
+    position: relative;
+    margin-bottom: 10px ;
+
+}
+.items .image_item{
+    width: 100%;
+   /* max-width: 250px;*/
+    height: auto;
+}
+.search-car{
+    display: inline-block;
+}
+
+.wrap__btn .btn__add {
+    border-radius: 50%;
+    padding: 10px;
+    background: #5bc0de;
+    font-size: 45px;
+    color: #fff;
+    line-height: 25px;
+}
+/*-------end card---------*/
