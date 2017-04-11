@@ -24,13 +24,14 @@ class FormAdd extends Component {
         var objnew = {};
         if (this.refs.media.value) {
             objnew.id = last_child.id + 1;
-            objnew.media = this.refs.media.value;
+            //objnew.media = this.refs.media.value ? this.refs.media.value :"http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
+            objnew.media = "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
             objnew.name = (this.refs.name.value.length > 0) ? this.refs.name.value : 'no name';
-            objnew.year = '';
-            objnew.model = '';
-            objnew.make = '';
-            objnew.price = '';
-            list.state.cars.push(objnew);
+            objnew.year =  (this.refs.year.value.length > 0) ? this.refs.year.value : 'null';
+            objnew.model = (this.refs.model.value.length > 0) ? this.refs.model.value : 'null';
+            objnew.make =  (this.refs.make.value.length > 0) ? this.refs.make.value : 'null';
+            objnew.price =  (this.refs.price.value.length > 0) ? this.refs.price.value : 'null';
+            list.state.cars.unshift(objnew);
             list.setState(list.state.cars);
 
             ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
@@ -40,20 +41,29 @@ class FormAdd extends Component {
             return false
         }
     }
+    close(){
+        ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
+    }
 
     render() {
         return (
-            <div>
-                <form>
+        <div id="popup" className="overlay">
+            <div className="popup">
+                <h2>Here i am</h2>
+                <a className="close" onClick={this.close.bind(this)}>&times;</a>
+                <div className="content">
                     media: <input type="text" ref="media" placeholder="media"/><br/>
                     Name: <input type="text" ref="name" placeholder="name"/><br/>
-                    {/* Year: <input type="text" placeholder="year"/><br/>
-                     Model: <input type="text" placeholder="model"/><br/>
-                     Make: <input type="text" placeholder="make"/><br/>
-                     Price: <input type="text" placeholder="price"/><br/>*/}
+                    Year: <input type="text" ref="year" placeholder="year"/><br/>
+                    Model: <input type="text" ref="model" placeholder="model"/><br/>
+                    Make: <input type="text" ref="make" placeholder="make"/><br/>
+                    Price: <input type="text" ref="price" placeholder="price"/><br/>
                     <input type="button" value="Submit" onClick={this.send.bind(this)}/>
-                </form>
+                </div>
+
             </div>
+        </div>
+
         )
     }
 }
@@ -206,15 +216,14 @@ class List extends Component {
                                                 className="item"
                                                 key={car.id.toString()}>
                                                 <img src={car.media} className="image_item" alt="image"/>
-                                                <div className="des__img">
-                                                    <div className="name__item">
-                                                        {car.name}
-                                                    </div>
-                                                    <Delete nodeID={car.id}/>
-                                                    <Edit nodeID={car.id}/>
-                                                </div>
                                             </IndexLink>
-
+                                            <div className="des__img">
+                                                <div className="name__item">
+                                                    {car.name}
+                                                </div>
+                                                <Delete nodeID={car.id}/>
+                                                <Edit nodeID={car.id}/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
