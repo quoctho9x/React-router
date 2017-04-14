@@ -47,7 +47,7 @@ h1 {
     margin: auto;
 }
 .wrap__btn{
-    display: none;
+    display: inline-block;
     margin-left: 10px;
 }
 /*-------end custom---------*/

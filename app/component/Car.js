@@ -2,6 +2,8 @@
 import ReactDOM from 'react-dom'
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
+//import Popup from 'Popup';
+
 var list;
 class Car extends Component {
     render() {
@@ -17,6 +19,8 @@ class FormAdd extends Component {
     constructor(props) {
         super(props)
         this.state = {obj: {}}
+        this.send=this.send.bind(this);
+        this.close=this.close.bind(this);
     }
 
     send() {
@@ -47,8 +51,11 @@ class FormAdd extends Component {
 
     render() {
         return (
-        <div id="popup" className="overlay">
-            <div className="popup">
+            <div>
+                <Popup send ={this.send} close={this.close}/>
+            </div>
+       /* <div id="popup" className="overlay">
+           <div className="popup">
                 <h2>Here i am</h2>
                 <a className="close" onClick={this.close.bind(this)}>&times;</a>
                 <div className="content">
@@ -60,10 +67,8 @@ class FormAdd extends Component {
                     Price: <input type="text" ref="price" placeholder="price"/><br/>
                     <input type="button" value="Submit" onClick={this.send.bind(this)}/>
                 </div>
-
             </div>
-        </div>
-
+        </div>*/
         )
     }
 }
@@ -234,6 +239,33 @@ class List extends Component {
                 </div>
             </div>
         );
+    }
+}
+
+
+class Popup extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {obj: {}}
+    }
+    render() {
+        return (
+            <div id="popup" className="overlay">
+                <div className="popup">
+                    <h2>Here i am</h2>
+               <a className="close" onClick={this.close}>&times;</a>
+                    <div className="content">
+                        media: <input type="text" ref="media" placeholder="media"/><br/>
+                        Name: <input type="text" ref="name" placeholder="name"/><br/>
+                        Year: <input type="text" ref="year" placeholder="year"/><br/>
+                        Model: <input type="text" ref="model" placeholder="model"/><br/>
+                        Make: <input type="text" ref="make" placeholder="make"/><br/>
+                        Price: <input type="text" ref="price" placeholder="price"/><br/>
+                        <input type="button" value="Submit" onClick={this.send}/>
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 

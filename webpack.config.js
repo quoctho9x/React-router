@@ -1,5 +1,8 @@
 module.exports = {
   entry: './app/main.js',
+  resolve: {
+      extensions: ['', '.js', '.jsx'],
+  },
   output: {
     path: './app',
     filename: 'bundle.js'

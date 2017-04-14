@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "console": "webpack --display-error-details"
   },
   "keywords": [],
   "author": "",
