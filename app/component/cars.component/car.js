@@ -15,27 +15,30 @@ class Car extends Component {
         )
     }
 }
-class FormAdd extends Component {
+/*class FormAdd extends Component {
     constructor(props) {
         super(props)
-        this.state = {obj: {},type:{}}
-        this.send=this.send.bind(this);
-        this.close=this.close.bind(this);
+        this.state = {obj: {}, type: {}}
+        this.send = this.send.bind(this);
+        this.close = this.close.bind(this);
         this.componentWillMount = this.componentWillMount.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
     }
+
     componentDidMount() {
         this.setState({
             type: this.props.type
         });
-       // console.log(this.state.type);
+        // console.log(this.state.type);
     }
+
     componentWillMount() {
         this.setState({
             type: this.props.type
         });
-         //console.log(this.state.type);
+        //console.log(this.state.type);
     }
+
     send() {
         var last_child = list.state.cars[list.state.cars.length - 1];
         var objnew = {};
@@ -44,10 +47,10 @@ class FormAdd extends Component {
             //objnew.media = this.refs.media.value ? this.refs.media.value :"http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
             objnew.media = "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
             objnew.name = (this.refs.name.value.length > 0) ? this.refs.name.value : 'no name';
-            objnew.year =  (this.refs.year.value.length > 0) ? this.refs.year.value : 'null';
+            objnew.year = (this.refs.year.value.length > 0) ? this.refs.year.value : 'null';
             objnew.model = (this.refs.model.value.length > 0) ? this.refs.model.value : 'null';
-            objnew.make =  (this.refs.make.value.length > 0) ? this.refs.make.value : 'null';
-            objnew.price =  (this.refs.price.value.length > 0) ? this.refs.price.value : 'null';
+            objnew.make = (this.refs.make.value.length > 0) ? this.refs.make.value : 'null';
+            objnew.price = (this.refs.price.value.length > 0) ? this.refs.price.value : 'null';
             list.state.cars.unshift(objnew);
             list.setState(list.state.cars);
 
@@ -58,12 +61,13 @@ class FormAdd extends Component {
             return false
         }
     }
-    close(){
+
+    close() {
         ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
     }
 
     render() {
-        if(this.props.type =='new'){
+        if (this.props.type == 'new') {
             return (
                 <div id="popup" className="overlay">
                     <div className="popup">
@@ -82,7 +86,7 @@ class FormAdd extends Component {
                 </div>
             )
         }
-        if(this.props.type =='edit') {
+        if (this.props.type == 'edit') {
             return (
                 <div id="popup" className="overlay">
                     <div className="popup">
@@ -113,7 +117,7 @@ class FormAdd extends Component {
         }
 
     }
-}
+}*/
 class Addnode extends Component {
     constructor(props) {
         super(props)
@@ -121,10 +125,9 @@ class Addnode extends Component {
     }
 
     addnode() {
-        ReactDOM.render(<Popup type={'new'} />, document.getElementById('addnode'))
-        //ReactDOM.render(<Popup type={'dedit'} />, document.getElementById('addnode'))
+        //truyen kieu du lieu va ca list qua cho popup
+        ReactDOM.render(<Popup type={'new'} list={list}/>, document.getElementById('addnode'))
     }
-
     render() {
         return (
             <div className="wrap__btn">
@@ -163,35 +166,17 @@ class Delete extends Component {
 class Edit extends Component {
     constructor(props) {
         super(props)
-        this.editnode = this.editnode.bind(this);
+        this.editNode = this.editNode.bind(this);
     }
 
-    editnode() {
-        var arr = list.state.cars;
-        var IdInsert = this.props.nodeID;
-        var objnew = {};
-        objnew.id = this.props.nodeID;
-        objnew.media = '';
-        objnew.name = 'add new';
-        objnew.year = '';
-        objnew.model = '';
-        objnew.make = '';
-        objnew.price = '';
-        //ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
-        ReactDOM.render(<Popup type={'edit'} />, document.getElementById('addnode'))
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i].id == IdInsert) {
-                arr.splice(i, 1, objnew);  //removes 1 element at position i
-                list.setState(list.state.cars);
-                break;
-            }
-        }
+    editNode() {
+        ReactDOM.render(<Popup type={'edit'} list={list} nodeID={this.props.nodeID}/>, document.getElementById('addnode'))
     }
 
     render() {
         return (
             <div className="wrap__btn">
-                <button className="btn btn-info" onClick={this.editnode}>Edit</button>
+                <button className="btn btn-info" onClick={this.editNode}>Edit</button>
             </div>
         )
     }
@@ -276,7 +261,6 @@ class List extends Component {
                                         </div>
                                     </div>
                                 </div>
-
                             )
                         })
                     }
@@ -285,8 +269,6 @@ class List extends Component {
         );
     }
 }
-
-
 
 
 export default Car

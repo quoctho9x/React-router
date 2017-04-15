@@ -20248,7 +20248,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _data = __webpack_require__(/*! ./data/data */ 235);
+	var _data = __webpack_require__(/*! ./data/data */ 160);
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -20256,43 +20256,43 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 161);
 	
-	var _Container = __webpack_require__(/*! ./component/nav.component/Container */ 243);
+	var _container = __webpack_require__(/*! ./component/nav.component/container */ 224);
 	
-	var _Container2 = _interopRequireDefault(_Container);
+	var _container2 = _interopRequireDefault(_container);
 	
-	var _notFound = __webpack_require__(/*! ./component/404.component/not-found */ 245);
+	var _notfound = __webpack_require__(/*! ./component/404.component/notfound */ 225);
 	
-	var _notFound2 = _interopRequireDefault(_notFound);
+	var _notfound2 = _interopRequireDefault(_notfound);
 	
-	var _Home = __webpack_require__(/*! ./component/Home */ 226);
+	var _home = __webpack_require__(/*! ./component/orther.component/home */ 226);
 	
-	var _Home2 = _interopRequireDefault(_Home);
+	var _home2 = _interopRequireDefault(_home);
 	
-	var _Order = __webpack_require__(/*! ./component/order.component/Order */ 239);
+	var _order = __webpack_require__(/*! ./component/order.component/order */ 227);
 	
-	var _Order2 = _interopRequireDefault(_Order);
+	var _order2 = _interopRequireDefault(_order);
 	
-	var _Title = __webpack_require__(/*! ./component/order.component/Title */ 240);
+	var _title = __webpack_require__(/*! ./component/order.component/title */ 228);
 	
-	var _Title2 = _interopRequireDefault(_Title);
+	var _title2 = _interopRequireDefault(_title);
 	
-	var _About = __webpack_require__(/*! ./component/About */ 229);
+	var _about = __webpack_require__(/*! ./component/orther.component/about */ 229);
 	
-	var _About2 = _interopRequireDefault(_About);
+	var _about2 = _interopRequireDefault(_about);
 	
-	var _Login = __webpack_require__(/*! ./component/login.component/Login */ 242);
+	var _login = __webpack_require__(/*! ./component/login.component/login */ 230);
 	
-	var _Login2 = _interopRequireDefault(_Login);
+	var _login2 = _interopRequireDefault(_login);
 	
-	var _car = __webpack_require__(/*! ./component/cars.component/car */ 246);
+	var _car = __webpack_require__(/*! ./component/cars.component/car */ 231);
 	
 	var _car2 = _interopRequireDefault(_car);
 	
-	var _CarDetail = __webpack_require__(/*! ./component/cars.component/CarDetail */ 238);
+	var _cardetail = __webpack_require__(/*! ./component/cars.component/cardetail */ 233);
 	
-	var _CarDetail2 = _interopRequireDefault(_CarDetail);
+	var _cardetail2 = _interopRequireDefault(_cardetail);
 	
-	var _Address = __webpack_require__(/*! ./component/Address */ 234);
+	var _address = __webpack_require__(/*! ./component/orther.component/address */ 234);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -20319,25 +20319,25 @@
 	                { history: _reactRouter.browserHistory },
 	                _react2.default.createElement(
 	                    _reactRouter.Route,
-	                    { path: '/', component: _Container2.default },
-	                    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	                    { path: '/', component: _container2.default },
+	                    _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
 	                    _react2.default.createElement(
 	                        _reactRouter.Route,
-	                        { path: '/address', component: _Address.Address },
-	                        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Address.TwitterFeed }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: 'instagram', component: _Address.Instagram }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: 'query', component: _Address.Query })
+	                        { path: '/address', component: _address.Address },
+	                        _react2.default.createElement(_reactRouter.IndexRoute, { component: _address.TwitterFeed }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'instagram', component: _address.Instagram }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'query', component: _address.Query })
 	                    ),
-	                    _react2.default.createElement(_reactRouter.Route, { path: '/about(/:name)', component: _About2.default }),
+	                    _react2.default.createElement(_reactRouter.Route, { path: '/about(/:name)', component: _about2.default }),
 	                    _react2.default.createElement(
 	                        _reactRouter.Route,
-	                        { path: '/order', component: _Order2.default },
-	                        _react2.default.createElement(_reactRouter.IndexRoute, { components: { title: _Title2.default } })
+	                        { path: '/order', component: _order2.default },
+	                        _react2.default.createElement(_reactRouter.IndexRoute, { components: { title: _title2.default } })
 	                    ),
-	                    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	                    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _login2.default }),
 	                    _react2.default.createElement(_reactRouter.Route, { path: '/cars', component: _car2.default, data: data }),
-	                    _react2.default.createElement(_reactRouter.Route, { path: '/cars/:id', component: _CarDetail2.default, data: data }),
-	                    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _notFound2.default })
+	                    _react2.default.createElement(_reactRouter.Route, { path: '/cars/:id', component: _cardetail2.default, data: data }),
+	                    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _notfound2.default })
 	                )
 	            );
 	        }
@@ -20354,7 +20354,156 @@
 	exports.default = App;
 
 /***/ },
-/* 160 */,
+/* 160 */
+/*!**************************!*\
+  !*** ./app/data/data.js ***!
+  \**************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	/*{
+	 "data": [
+	 {
+	 "id": 1,
+	 "name": "Honda Accord Crosstour",
+	 "year": "2010",
+	 "model": "Accord Crosstour",
+	 "make": "Honda",
+	 "media": "http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg",
+	 "price": "$16,811"
+	 },
+	 {
+	 "id": 2,
+	 "name": "Mercedes-Benz AMG GT Coupe",
+	 "year": "2016",
+	 "model": "AMG",
+	 "make": "Mercedes Benz",
+	 "media": "http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg",
+	 "price": "$138,157"
+	 },
+	 {
+	 "id": 3,
+	 "name": "BMW X6 SUV",
+	 "year": "2016",
+	 "model": "X6",
+	 "make": "BMW",
+	 "media": "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg",
+	 "price": "$68,999"
+	 },
+	 {
+	 "id": 4,
+	 "name": "Ford Edge SUV",
+	 "year": "2016",
+	 "model": "Edge",
+	 "make": "Ford",
+	 "media": "http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg",
+	 "price": "$36,275"
+	 },
+	 {
+	 "id": 5,
+	 "name": "Dodge Viper Coupe",
+	 "year": "2017",
+	 "model": "Viper",
+	 "make": "Dodge",
+	 "media": "http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg",
+	 "price": "$123,890"
+	 }
+	 ]
+	 }*/
+	
+	var Data = [{
+	    id: 1,
+	    name: 'Honda Accord Crosstour',
+	    year: '2010',
+	    model: 'Accord Crosstour',
+	    make: 'Honda',
+	    media: 'http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg',
+	    price: '$16,811'
+	
+	}, {
+	    id: 2,
+	    name: 'Mercedes-Benz AMG GT Coupe',
+	    year: '2016',
+	    model: 'AMG',
+	    make: 'Mercedes Benz',
+	    media: 'http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg',
+	    price: '$138,157'
+	
+	}, {
+	    id: 3,
+	    name: 'BMW X6 SUV',
+	    year: '2016',
+	    model: 'X6',
+	    make: 'BMW',
+	    media: 'http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg',
+	    price: '$68,999'
+	}, {
+	    id: 4,
+	    name: 'Ford Edge SUV',
+	    year: '2016',
+	    model: 'Edge',
+	    make: 'Ford',
+	    media: 'http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg',
+	    price: '$36,275'
+	}, {
+	    id: 5,
+	    name: 'Dodge Viper Coupe',
+	    year: '2017',
+	    model: 'Viper',
+	    make: 'Dodge',
+	    media: 'http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg',
+	    price: '$123,890'
+	}, {
+	    id: 6,
+	    name: 'Honda Accord Crosstour',
+	    year: '2010',
+	    model: 'Accord Crosstour',
+	    make: 'Honda',
+	    media: 'http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg',
+	    price: '$16,811'
+	
+	}, {
+	    id: 7,
+	    name: 'Mercedes-Benz AMG GT Coupe',
+	    year: '2016',
+	    model: 'AMG',
+	    make: 'Mercedes Benz',
+	    media: 'http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg',
+	    price: '$138,157'
+	
+	}, {
+	    id: 8,
+	    name: 'BMW X6 SUV',
+	    year: '2016',
+	    model: 'X6',
+	    make: 'BMW',
+	    media: 'http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg',
+	    price: '$68,999'
+	}, {
+	    id: 9,
+	    name: 'Ford Edge SUV',
+	    year: '2016',
+	    model: 'Edge',
+	    make: 'Ford',
+	    media: 'http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg',
+	    price: '$36,275'
+	}, {
+	    id: 10,
+	    name: 'Dodge Viper Coupe',
+	    year: '2017',
+	    model: 'Viper',
+	    make: 'Dodge',
+	    media: 'http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg',
+	    price: '$123,890'
+	}];
+	
+	exports.Data = Data;
+
+/***/ },
 /* 161 */
 /*!*************************************!*\
   !*** ./~/react-router/lib/index.js ***!
@@ -26196,12 +26345,217 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 224 */,
-/* 225 */,
+/* 224 */
+/*!**************************************************!*\
+  !*** ./app/component/nav.component/container.js ***!
+  \**************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 161);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Container = function (_Component) {
+	    _inherits(Container, _Component);
+	
+	    function Container() {
+	        _classCallCheck(this, Container);
+	
+	        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
+	    }
+	
+	    _createClass(Container, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(Nav, null),
+	                this.props.children
+	            );
+	        }
+	    }]);
+	
+	    return Container;
+	}(_react.Component);
+	
+	var Nav = function (_Component2) {
+	    _inherits(Nav, _Component2);
+	
+	    function Nav() {
+	        _classCallCheck(this, Nav);
+	
+	        return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+	    }
+	
+	    _createClass(Nav, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'nav',
+	                    { className: 'navbar navbar-default' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container-fluid' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'navbar-header' },
+	                            _react2.default.createElement(
+	                                _reactRouter.IndexLink,
+	                                { className: 'navbar-brand', activeClassName: 'active', to: '/' },
+	                                'Home'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	                            _react2.default.createElement(
+	                                'ul',
+	                                { className: 'nav navbar-nav' },
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        { activeClassName: 'active', to: '/address' },
+	                                        'Address'
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    '  ',
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        { activeClassName: 'active', to: '/about' },
+	                                        'About'
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    ' ',
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        { activeClassName: 'active', to: '/order' },
+	                                        'Order'
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    '  ',
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        { activeClassName: 'active', to: '/login' },
+	                                        'login'
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    '  ',
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        { activeClassName: 'active', to: '/cars' },
+	                                        'Car'
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Nav;
+	}(_react.Component);
+	
+	exports.default = Container;
+
+/***/ },
+/* 225 */
+/*!*************************************************!*\
+  !*** ./app/component/404.component/notfound.js ***!
+  \*************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var NotFound = function (_Component) {
+	    _inherits(NotFound, _Component);
+	
+	    function NotFound() {
+	        _classCallCheck(this, NotFound);
+	
+	        return _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).apply(this, arguments));
+	    }
+	
+	    _createClass(NotFound, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    '404.. This page is not found! haha'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return NotFound;
+	}(_react.Component);
+	
+	exports.default = NotFound;
+
+/***/ },
 /* 226 */
-/*!*******************************!*\
-  !*** ./app/component/Home.js ***!
-  \*******************************/
+/*!************************************************!*\
+  !*** ./app/component/orther.component/home.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26395,12 +26749,203 @@
 	exports.default = Home;
 
 /***/ },
-/* 227 */,
-/* 228 */,
+/* 227 */
+/*!************************************************!*\
+  !*** ./app/component/order.component/order.js ***!
+  \************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Order = function (_Component) {
+	    _inherits(Order, _Component);
+	
+	    function Order() {
+	        _classCallCheck(this, Order);
+	
+	        return _possibleConstructorReturn(this, (Order.__proto__ || Object.getPrototypeOf(Order)).apply(this, arguments));
+	    }
+	
+	    _createClass(Order, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                this.props.title,
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement(ServiceChooser, { items: services })
+	            );
+	        }
+	    }]);
+	
+	    return Order;
+	}(_react.Component);
+	// This is more complex example that uses two components -
+	// a service chooser form, and the individual services inside it.
+	
+	
+	var ServiceChooser = _react2.default.createClass({
+	    displayName: "ServiceChooser",
+	
+	
+	    getInitialState: function getInitialState() {
+	        return { total: 0 };
+	    },
+	
+	    addTotal: function addTotal(price) {
+	        this.setState({ total: this.state.total + price });
+	    },
+	
+	    render: function render() {
+	        var self = this;
+	        var services = this.props.items.map(function (s, index) {
+	            // Create a new Service component for each item in the items array.
+	            // Notice that I pass the self.addTotal function to the component.
+	            return _react2.default.createElement(Service, { key: index, name: s.name, price: s.price, active: s.active, addTotal: self.addTotal });
+	        });
+	
+	        return _react2.default.createElement(
+	            "div",
+	            null,
+	            _react2.default.createElement(
+	                "h1",
+	                null,
+	                "Our services"
+	            ),
+	            _react2.default.createElement(
+	                "div",
+	                { id: "services" },
+	                services,
+	                _react2.default.createElement(
+	                    "p",
+	                    { id: "total" },
+	                    "Total ",
+	                    _react2.default.createElement(
+	                        "b",
+	                        null,
+	                        "$",
+	                        this.state.total.toFixed(2)
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+	
+	var Service = _react2.default.createClass({
+	    displayName: "Service",
+	
+	    getInitialState: function getInitialState() {
+	        return { active: false };
+	    },
+	
+	    clickHandler: function clickHandler() {
+	        var active = !this.state.active;
+	        this.setState({ active: active });
+	        // Notify the ServiceChooser, by calling its addTotal method
+	        this.props.addTotal(active ? this.props.price : -this.props.price);
+	    },
+	
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "p",
+	            { className: this.state.active ? 'active' : '', onClick: this.clickHandler },
+	            this.props.name,
+	            _react2.default.createElement(
+	                "b",
+	                null,
+	                "$",
+	                this.props.price.toFixed(2)
+	            )
+	        );
+	    }
+	
+	});
+	
+	var services = [{ name: 'Web Development', price: 300 }, { name: 'Web Front-end', price: 350 }, { name: 'Web Back-end', price: 500 }, { name: 'Design', price: 400 }, { name: 'Integration', price: 250 }, { name: 'Training', price: 220 }];
+	
+	exports.default = Order;
+
+/***/ },
+/* 228 */
+/*!************************************************!*\
+  !*** ./app/component/order.component/title.js ***!
+  \************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Title = function (_Component) {
+	    _inherits(Title, _Component);
+	
+	    function Title() {
+	        _classCallCheck(this, Title);
+	
+	        return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
+	    }
+	
+	    _createClass(Title, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    'Hello from Title Component'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Title;
+	}(_react.Component);
+	
+	exports.default = Title;
+
+/***/ },
 /* 229 */
-/*!********************************!*\
-  !*** ./app/component/About.js ***!
-  \********************************/
+/*!*************************************************!*\
+  !*** ./app/component/orther.component/about.js ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26528,14 +27073,10 @@
 	exports.default = About;
 
 /***/ },
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */
-/*!**********************************!*\
-  !*** ./app/component/Address.js ***!
-  \**********************************/
+/* 230 */
+/*!************************************************!*\
+  !*** ./app/component/login.component/login.js ***!
+  \************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26543,7 +27084,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.Query = exports.TwitterFeed = exports.Instagram = exports.Address = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -26561,229 +27101,498 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Address = function (_Component) {
-	    _inherits(Address, _Component);
+	var Login = function (_Component) {
+	    _inherits(Login, _Component);
 	
-	    function Address() {
-	        _classCallCheck(this, Address);
+	    function Login(props) {
+	        _classCallCheck(this, Login);
 	
-	        return _possibleConstructorReturn(this, (Address.__proto__ || Object.getPrototypeOf(Address)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+	
+	        _this.state = { name: '', password: '' };
+	        _this.handleSubmit = _this.handleSubmit.bind(_this);
+	        _this.handleChange = _this.handleChange.bind(_this);
+	        _this.handleChange2 = _this.handleChange2.bind(_this);
+	        return _this;
 	    }
 	
-	    _createClass(Address, [{
+	    _createClass(Login, [{
+	        key: 'handleRedirect',
+	        value: function handleRedirect() {
+	            _reactRouter.browserHistory.push('/');
+	        }
+	    }, {
+	        key: 'handleSubmit',
+	        value: function handleSubmit() {
+	
+	            if (this.state.name === 'admin') {
+	                alert(this.state.name + "<br/> " + this.state.password);
+	            }
+	        }
+	    }, {
+	        key: 'handleChange',
+	        value: function handleChange(e) {
+	            this.setState({ name: e.target.value });
+	        }
+	    }, {
+	        key: 'handleChange2',
+	        value: function handleChange2(e) {
+	            this.setState({ password: e.target.value });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement('br', null),
+	                { className: 'container' },
 	                _react2.default.createElement(
-	                    _reactRouter.IndexLink,
-	                    { activeClassName: 'active', to: '/address/instagram' },
-	                    'Instagram Feed'
-	                ),
-	                '\xA0',
-	                _react2.default.createElement(
-	                    _reactRouter.IndexLink,
-	                    { activeClassName: 'active', to: { pathname: '/address/query', query: { message: 'Hello from Route Query' } } },
-	                    'router query'
-	                ),
-	                '\xA0',
-	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    'We are located at 555 Jackson St.'
-	                ),
-	                this.props.children
+	                    'div',
+	                    { className: 'col-md-6 col-md-offset-3' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        { className: 'text-center' },
+	                        'Log In'
+	                    ),
+	                    _react2.default.createElement(
+	                        'form',
+	                        { onSubmit: this.handleSubmit },
+	                        _react2.default.createElement(
+	                            'fieldset',
+	                            { className: 'form-group' },
+	                            _react2.default.createElement(
+	                                'label',
+	                                null,
+	                                'Email'
+	                            ),
+	                            _react2.default.createElement('input', { className: 'form-control', type: 'text', value: this.state.name, onChange: this.handleChange, placeholder: 'Email' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'fieldset',
+	                            { className: 'form-group' },
+	                            _react2.default.createElement(
+	                                'label',
+	                                null,
+	                                'Password'
+	                            ),
+	                            _react2.default.createElement('input', { className: 'form-control', type: 'password', value: this.state.password, onChange: this.handleChange2, placeholder: 'Password' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'button',
+	                            { action: 'submit', className: 'btn btn-primary', onClick: this.handleRedirect.bind(this) },
+	                            'Sign In'
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
 	
-	    return Address;
+	    return Login;
 	}(_react.Component);
 	
-	var Instagram = function Instagram() {
-	    return _react2.default.createElement(
-	        'h3',
-	        null,
-	        'this is default page address Instagram Feed '
-	    );
-	};
-	var TwitterFeed = function TwitterFeed() {
-	    return _react2.default.createElement(
-	        'h3',
-	        null,
-	        'Twitter Feed child of address'
-	    );
-	};
-	var Query = function Query(props) {
-	    return _react2.default.createElement(
-	        'h2',
-	        null,
-	        'show query: ',
-	        props.location.query.message
-	    );
-	};
-	exports.Address = Address;
-	exports.Instagram = Instagram;
-	exports.TwitterFeed = TwitterFeed;
-	exports.Query = Query;
+	exports.default = Login;
 
 /***/ },
-/* 235 */
-/*!**************************!*\
-  !*** ./app/data/data.js ***!
-  \**************************/
-/***/ function(module, exports) {
+/* 231 */
+/*!*********************************************!*\
+  !*** ./app/component/cars.component/car.js ***!
+  \*********************************************/
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	/*{
-	 "data": [
-	 {
-	 "id": 1,
-	 "name": "Honda Accord Crosstour",
-	 "year": "2010",
-	 "model": "Accord Crosstour",
-	 "make": "Honda",
-	 "media": "http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg",
-	 "price": "$16,811"
-	 },
-	 {
-	 "id": 2,
-	 "name": "Mercedes-Benz AMG GT Coupe",
-	 "year": "2016",
-	 "model": "AMG",
-	 "make": "Mercedes Benz",
-	 "media": "http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg",
-	 "price": "$138,157"
-	 },
-	 {
-	 "id": 3,
-	 "name": "BMW X6 SUV",
-	 "year": "2016",
-	 "model": "X6",
-	 "make": "BMW",
-	 "media": "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg",
-	 "price": "$68,999"
-	 },
-	 {
-	 "id": 4,
-	 "name": "Ford Edge SUV",
-	 "year": "2016",
-	 "model": "Edge",
-	 "make": "Ford",
-	 "media": "http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg",
-	 "price": "$36,275"
-	 },
-	 {
-	 "id": 5,
-	 "name": "Dodge Viper Coupe",
-	 "year": "2017",
-	 "model": "Viper",
-	 "make": "Dodge",
-	 "media": "http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg",
-	 "price": "$123,890"
-	 }
-	 ]
-	 }*/
 	
-	var Data = [{
-	    id: 1,
-	    name: 'Honda Accord Crosstour',
-	    year: '2010',
-	    model: 'Accord Crosstour',
-	    make: 'Honda',
-	    media: 'http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg',
-	    price: '$16,811'
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	}, {
-	    id: 2,
-	    name: 'Mercedes-Benz AMG GT Coupe',
-	    year: '2016',
-	    model: 'AMG',
-	    make: 'Mercedes Benz',
-	    media: 'http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg',
-	    price: '$138,157'
+	var _reactDom = __webpack_require__(/*! react-dom */ 158);
 	
-	}, {
-	    id: 3,
-	    name: 'BMW X6 SUV',
-	    year: '2016',
-	    model: 'X6',
-	    make: 'BMW',
-	    media: 'http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg',
-	    price: '$68,999'
-	}, {
-	    id: 4,
-	    name: 'Ford Edge SUV',
-	    year: '2016',
-	    model: 'Edge',
-	    make: 'Ford',
-	    media: 'http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg',
-	    price: '$36,275'
-	}, {
-	    id: 5,
-	    name: 'Dodge Viper Coupe',
-	    year: '2017',
-	    model: 'Viper',
-	    make: 'Dodge',
-	    media: 'http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg',
-	    price: '$123,890'
-	}, {
-	    id: 6,
-	    name: 'Honda Accord Crosstour',
-	    year: '2010',
-	    model: 'Accord Crosstour',
-	    make: 'Honda',
-	    media: 'http://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex-l_fq_oem_4_500.jpg',
-	    price: '$16,811'
+	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	}, {
-	    id: 7,
-	    name: 'Mercedes-Benz AMG GT Coupe',
-	    year: '2016',
-	    model: 'AMG',
-	    make: 'Mercedes Benz',
-	    media: 'http://media.ed.edmunds-media.com/mercedes-benz/amg-gt/2016/oem/2016_mercedes-benz_amg-gt_coupe_s_fq_oem_1_717.jpg',
-	    price: '$138,157'
+	var _react = __webpack_require__(/*! react */ 1);
 	
-	}, {
-	    id: 8,
-	    name: 'BMW X6 SUV',
-	    year: '2016',
-	    model: 'X6',
-	    make: 'BMW',
-	    media: 'http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg',
-	    price: '$68,999'
-	}, {
-	    id: 9,
-	    name: 'Ford Edge SUV',
-	    year: '2016',
-	    model: 'Edge',
-	    make: 'Ford',
-	    media: 'http://media.ed.edmunds-media.com/ford/edge/2016/oem/2016_ford_edge_4dr-suv_sport_fq_oem_6_717.jpg',
-	    price: '$36,275'
-	}, {
-	    id: 10,
-	    name: 'Dodge Viper Coupe',
-	    year: '2017',
-	    model: 'Viper',
-	    make: 'Dodge',
-	    media: 'http://media.ed.edmunds-media.com/dodge/viper/2017/oem/2017_dodge_viper_coupe_acr_fq_oem_3_717.jpg',
-	    price: '$123,890'
-	}];
+	var _react2 = _interopRequireDefault(_react);
 	
-	exports.Data = Data;
+	var _reactRouter = __webpack_require__(/*! react-router */ 161);
+	
+	var _popup = __webpack_require__(/*! ./popup */ 232);
+	
+	var _popup2 = _interopRequireDefault(_popup);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ./src/car/car.component.jsx
+	
+	
+	var list;
+	
+	var Car = function (_Component) {
+	    _inherits(Car, _Component);
+	
+	    function Car() {
+	        _classCallCheck(this, Car);
+	
+	        return _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).apply(this, arguments));
+	    }
+	
+	    _createClass(Car, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Welcome to the Cars Page in car.component'
+	                ),
+	                _react2.default.createElement(List, { items: this.props.route.data })
+	            );
+	        }
+	    }]);
+	
+	    return Car;
+	}(_react.Component);
+	/*class FormAdd extends Component {
+	    constructor(props) {
+	        super(props)
+	        this.state = {obj: {}, type: {}}
+	        this.send = this.send.bind(this);
+	        this.close = this.close.bind(this);
+	        this.componentWillMount = this.componentWillMount.bind(this);
+	        this.componentDidMount = this.componentDidMount.bind(this);
+	    }
+	
+	    componentDidMount() {
+	        this.setState({
+	            type: this.props.type
+	        });
+	        // console.log(this.state.type);
+	    }
+	
+	    componentWillMount() {
+	        this.setState({
+	            type: this.props.type
+	        });
+	        //console.log(this.state.type);
+	    }
+	
+	    send() {
+	        var last_child = list.state.cars[list.state.cars.length - 1];
+	        var objnew = {};
+	        if (this.refs.media.value) {
+	            objnew.id = last_child.id + 1;
+	            //objnew.media = this.refs.media.value ? this.refs.media.value :"http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
+	            objnew.media = "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
+	            objnew.name = (this.refs.name.value.length > 0) ? this.refs.name.value : 'no name';
+	            objnew.year = (this.refs.year.value.length > 0) ? this.refs.year.value : 'null';
+	            objnew.model = (this.refs.model.value.length > 0) ? this.refs.model.value : 'null';
+	            objnew.make = (this.refs.make.value.length > 0) ? this.refs.make.value : 'null';
+	            objnew.price = (this.refs.price.value.length > 0) ? this.refs.price.value : 'null';
+	            list.state.cars.unshift(objnew);
+	            list.setState(list.state.cars);
+	
+	            ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
+	        }
+	        else {
+	            alert('xin nhap media');
+	            return false
+	        }
+	    }
+	
+	    close() {
+	        ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
+	    }
+	
+	    render() {
+	        if (this.props.type == 'new') {
+	            return (
+	                <div id="popup" className="overlay">
+	                    <div className="popup">
+	                        <h2>add new item </h2>
+	                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+	                        <div className="content">
+	                            media: <input type="text" ref="media" placeholder="media"/><br/>
+	                            Name: <input type="text" ref="name" placeholder="name"/><br/>
+	                            Year: <input type="text" ref="year" placeholder="year"/><br/>
+	                            Model: <input type="text" ref="model" placeholder="model"/><br/>
+	                            Make: <input type="text" ref="make" placeholder="make"/><br/>
+	                            Price: <input type="text" ref="price" placeholder="price"/><br/>
+	                            <input type="button" value="Submit" onClick={this.send.bind(this)}/>
+	                        </div>
+	                    </div>
+	                </div>
+	            )
+	        }
+	        if (this.props.type == 'edit') {
+	            return (
+	                <div id="popup" className="overlay">
+	                    <div className="popup">
+	                        <h2>edit item</h2>
+	                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+	                        <div className="content">
+	                            media: <input type="text" ref="media" placeholder="media"/><br/>
+	                            Name: <input type="text" ref="name" placeholder="name"/><br/>
+	                            Year: <input type="text" ref="year" placeholder="year"/><br/>
+	                            Model: <input type="text" ref="model" placeholder="model"/><br/>
+	                            Make: <input type="text" ref="make" placeholder="make"/><br/>
+	                            Price: <input type="text" ref="price" placeholder="price"/><br/>
+	                            <input type="button" value="Submit" onClick={this.send.bind(this)}/>
+	                        </div>
+	                    </div>
+	                </div>
+	            )
+	        }
+	        else {
+	            return (
+	                <div id="popup" className="overlay">
+	                    <div className="popup">
+	                        <h2>pleas insert type</h2>
+	                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+	                    </div>
+	                </div>
+	            )
+	        }
+	
+	    }
+	}*/
+	
+	
+	var Addnode = function (_Component2) {
+	    _inherits(Addnode, _Component2);
+	
+	    function Addnode(props) {
+	        _classCallCheck(this, Addnode);
+	
+	        var _this2 = _possibleConstructorReturn(this, (Addnode.__proto__ || Object.getPrototypeOf(Addnode)).call(this, props));
+	
+	        _this2.addnode = _this2.addnode.bind(_this2);
+	        return _this2;
+	    }
+	
+	    _createClass(Addnode, [{
+	        key: 'addnode',
+	        value: function addnode() {
+	            //truyen kieu du lieu va ca list qua cho popup
+	            _reactDom2.default.render(_react2.default.createElement(_popup2.default, { type: 'new', list: list }), document.getElementById('addnode'));
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'wrap__btn' },
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#', className: 'btn btn-info btn__add', onClick: this.addnode },
+	                    '+'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Addnode;
+	}(_react.Component);
+	
+	var Delete = function (_Component3) {
+	    _inherits(Delete, _Component3);
+	
+	    function Delete(props) {
+	        _classCallCheck(this, Delete);
+	
+	        var _this3 = _possibleConstructorReturn(this, (Delete.__proto__ || Object.getPrototypeOf(Delete)).call(this, props));
+	
+	        _this3.deletenode = _this3.deletenode.bind(_this3);
+	        return _this3;
+	    }
+	
+	    _createClass(Delete, [{
+	        key: 'deletenode',
+	        value: function deletenode() {
+	            var arr = list.state.cars;
+	            var Idemove = this.props.nodeID;
+	            for (var i = 0; i < arr.length; i++) {
+	                if (arr[i].id == Idemove) {
+	                    arr.splice(i, 1); //removes 1 element at position i
+	                    list.setState(list.state.cars);
+	                    break;
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'wrap__btn' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'btn btn-danger', onClick: this.deletenode },
+	                    'Delete'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Delete;
+	}(_react.Component);
+	
+	var Edit = function (_Component4) {
+	    _inherits(Edit, _Component4);
+	
+	    function Edit(props) {
+	        _classCallCheck(this, Edit);
+	
+	        var _this4 = _possibleConstructorReturn(this, (Edit.__proto__ || Object.getPrototypeOf(Edit)).call(this, props));
+	
+	        _this4.editNode = _this4.editNode.bind(_this4);
+	        return _this4;
+	    }
+	
+	    _createClass(Edit, [{
+	        key: 'editNode',
+	        value: function editNode() {
+	            _reactDom2.default.render(_react2.default.createElement(_popup2.default, { type: 'edit', list: list, nodeID: this.props.nodeID }), document.getElementById('addnode'));
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'wrap__btn' },
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'btn btn-info', onClick: this.editNode },
+	                    'Edit'
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Edit;
+	}(_react.Component);
+	
+	var List = function (_Component5) {
+	    _inherits(List, _Component5);
+	
+	    function List(props) {
+	        _classCallCheck(this, List);
+	
+	        var _this5 = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+	
+	        _this5.state = { searchString: '', cars: [] };
+	        list = _this5;
+	        _this5.componentWillMount = _this5.componentWillMount.bind(_this5);
+	
+	        return _this5;
+	    }
+	
+	    _createClass(List, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            this.state.cars = this.props.items;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: 'handleChange',
+	        value: function handleChange(e) {
+	            this.setState({ searchString: e.target.value });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            // Get data from Car items
+	            var cars = this.props.items,
+	                searchString = this.state.searchString.trim().toLowerCase();
+	            // Map through cars and return linked cars
+	            /*const carNode = cars.map((car) => {
+	             return (
+	             <IndexLink
+	             activeClassName='active'
+	             to={"/cars/"+car.id}
+	             className="list-group-item"
+	             key={car.id}>
+	             {car.name}
+	             </IndexLink>
+	             )
+	             });*/
+	
+	            if (searchString.length > 0) {
+	                this.state.cars = this.state.cars.filter(function (list) {
+	                    return list.name.toLowerCase().match(searchString);
+	                });
+	            } else {
+	                this.state.cars = this.props.items;
+	                // this.setState(this.state.cars);
+	            }
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement('input', { type: 'text', value: this.state.searchString, className: 'text_box search-car',
+	                        onChange: this.handleChange.bind(this), placeholder: 'Type here' }),
+	                    _react2.default.createElement(Addnode, null)
+	                ),
+	                _react2.default.createElement('div', { id: 'addnode' }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'items clearfix' },
+	                    this.state.cars.map(function (car) {
+	                        return _react2.default.createElement(
+	                            'div',
+	                            { className: 'list__group' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'col-md-6' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'wrap_item' },
+	                                    _react2.default.createElement(
+	                                        _reactRouter.IndexLink,
+	                                        {
+	                                            activeClassName: 'active',
+	                                            to: "/cars/" + car.id,
+	                                            className: 'item',
+	                                            key: car.id.toString() },
+	                                        _react2.default.createElement('img', { src: car.media, className: 'image_item', alt: 'image' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'des__img' },
+	                                        _react2.default.createElement(
+	                                            'div',
+	                                            { className: 'name__item' },
+	                                            car.name
+	                                        ),
+	                                        _react2.default.createElement(Delete, { nodeID: car.id }),
+	                                        _react2.default.createElement(Edit, { nodeID: car.id })
+	                                    )
+	                                )
+	                            )
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return List;
+	}(_react.Component);
+	
+	exports.default = Car;
 
 /***/ },
-/* 236 */,
-/* 237 */
+/* 232 */
 /*!***********************************************!*\
-  !*** ./app/component/cars.component/Popup.js ***!
+  !*** ./app/component/cars.component/popup.js ***!
   \***********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -26811,6 +27620,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var list;
+	
 	var Popup = function (_Component) {
 	    _inherits(Popup, _Component);
 	
@@ -26819,8 +27630,13 @@
 	
 	        var _this = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
 	
-	        _this.state = { obj: {}, type: {} };
-	        _this.send = _this.send.bind(_this);
+	        _this.state = {
+	            obj: {},
+	            type: {},
+	            objmedia: "", objname: "", objyear: "", objmodel: "", objmake: "", objprice: ""
+	        };
+	        _this.addNewNode = _this.addNewNode.bind(_this);
+	        _this.editNode = _this.editNode.bind(_this);
 	        _this.close = _this.close.bind(_this);
 	        _this.componentWillMount = _this.componentWillMount.bind(_this);
 	        _this.componentDidMount = _this.componentDidMount.bind(_this);
@@ -26838,14 +27654,36 @@
 	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
+	            list = this.props.list;
+	            var arr = list.state.cars;
+	            var IdInsert = this.props.nodeID;
+	            var objnew = {};
+	            //get value of node edit insert popup
+	            for (var i = 0; i < arr.length; i++) {
+	                if (arr[i].id == IdInsert) {
+	                    objnew = arr[i];
+	                    this.state.objmedia = objnew.media;
+	                    this.state.objname = objnew.name;
+	                    this.state.objyear = objnew.year;
+	                    this.state.objmodel = objnew.model;
+	                    this.state.objmake = objnew.make;
+	                    this.state.objprice = objnew.price;
+	
+	                    //arr.splice(i, 1, objnew);  //removes 1 element at position i
+	                    //list.setState(list.state.cars);
+	                    this.setState(this.state);
+	                    break;
+	                }
+	            }
+	
+	            //list = this.props.list;
 	            this.setState({
 	                type: this.props.type
 	            });
-	            //console.log(this.state.type);
 	        }
 	    }, {
-	        key: 'send',
-	        value: function send() {
+	        key: 'addNewNode',
+	        value: function addNewNode() {
 	            var last_child = list.state.cars[list.state.cars.length - 1];
 	            var objnew = {};
 	            if (this.refs.media.value) {
@@ -26867,9 +27705,44 @@
 	            }
 	        }
 	    }, {
+	        key: 'editNode',
+	        value: function editNode() {
+	            var arr = list.state.cars;
+	            var IdInsert = this.props.nodeID;
+	            var objnew = {};
+	            //console.log(list.state.cars);
+	            // console.log(this.props.nodeID);
+	
+	            /* objnew.id = this.props.nodeID;
+	             objnew.media = '';
+	             objnew.name = 'add new';
+	             objnew.year = '';
+	             objnew.model = '';
+	             objnew.make = '';
+	             objnew.price = '';*/
+	            for (var i = 0; i < arr.length; i++) {
+	                if (arr[i].id == IdInsert) {
+	                    objnew = arr[i];
+	                    //objnew.media = this.refs.media.value ? this.refs.media.value :"http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
+	                    objnew.id = this.props.nodeID;
+	                    // objnew.media = "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
+	                    objnew.name = this.refs.name.value.length > 0 ? this.refs.name.value : 'no name';
+	                    objnew.year = this.refs.year.value.length > 0 ? this.refs.year.value : 'nul';
+	                    objnew.model = this.refs.model.value.length > 0 ? this.refs.model.value : 'null';
+	                    objnew.make = this.refs.make.value.length > 0 ? this.refs.make.value : 'null';
+	                    objnew.price = this.refs.price.value.length > 0 ? this.refs.price.value : 'null';
+	
+	                    arr.splice(i, 1, objnew); //removes 1 element at position i
+	                    list.setState(list.state.cars);
+	                    break;
+	                }
+	            }
+	            //close popup when finish
+	            _reactDom2.default.unmountComponentAtNode(document.getElementById('addnode'));
+	        }
+	    }, {
 	        key: 'close',
 	        value: function close() {
-	
 	            _reactDom2.default.unmountComponentAtNode(document.getElementById('addnode'));
 	        }
 	    }, {
@@ -26889,7 +27762,7 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
+	                            { className: 'close', onClick: this.close },
 	                            '\xD7'
 	                        ),
 	                        _react2.default.createElement(
@@ -26913,7 +27786,7 @@
 	                            'Price: ',
 	                            _react2.default.createElement('input', { type: 'text', ref: 'price', placeholder: 'price' }),
 	                            _react2.default.createElement('br', null),
-	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.send.bind(this) })
+	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.addNewNode })
 	                        )
 	                    )
 	                );
@@ -26932,31 +27805,31 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
+	                            { className: 'close', onClick: this.close },
 	                            '\xD7'
 	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'content' },
 	                            'media: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'media', placeholder: 'media' }),
+	                            _react2.default.createElement('input', { type: 'text', value: this.state.objmedia, ref: 'media' }),
 	                            _react2.default.createElement('br', null),
 	                            'Name: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'name', placeholder: 'name' }),
+	                            _react2.default.createElement('input', { type: 'text', defaultValue: this.state.objname, ref: 'name' }),
 	                            _react2.default.createElement('br', null),
 	                            'Year: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'year', placeholder: 'year' }),
+	                            _react2.default.createElement('input', { type: 'text', defaultValue: this.state.objyear, ref: 'year' }),
 	                            _react2.default.createElement('br', null),
 	                            'Model: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'model', placeholder: 'model' }),
+	                            _react2.default.createElement('input', { type: 'text', defaultValue: this.state.objmodel, ref: 'model' }),
 	                            _react2.default.createElement('br', null),
 	                            'Make: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'make', placeholder: 'make' }),
+	                            _react2.default.createElement('input', { type: 'text', defaultValue: this.state.objmake, ref: 'make' }),
 	                            _react2.default.createElement('br', null),
 	                            'Price: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'price', placeholder: 'price' }),
+	                            _react2.default.createElement('input', { type: 'text', defaultValue: this.state.objprice, ref: 'price' }),
 	                            _react2.default.createElement('br', null),
-	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.send.bind(this) })
+	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.editNode })
 	                        )
 	                    )
 	                );
@@ -26974,7 +27847,7 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
+	                            { className: 'close', onClick: this.close },
 	                            '\xD7'
 	                        )
 	                    )
@@ -26989,9 +27862,9 @@
 	exports.default = Popup;
 
 /***/ },
-/* 238 */
+/* 233 */
 /*!***************************************************!*\
-  !*** ./app/component/cars.component/CarDetail.js ***!
+  !*** ./app/component/cars.component/cardetail.js ***!
   \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27142,147 +28015,10 @@
 	exports.default = CarDetail;
 
 /***/ },
-/* 239 */
-/*!************************************************!*\
-  !*** ./app/component/order.component/Order.js ***!
-  \************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Order = function (_Component) {
-	    _inherits(Order, _Component);
-	
-	    function Order() {
-	        _classCallCheck(this, Order);
-	
-	        return _possibleConstructorReturn(this, (Order.__proto__ || Object.getPrototypeOf(Order)).apply(this, arguments));
-	    }
-	
-	    _createClass(Order, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                null,
-	                this.props.title,
-	                _react2.default.createElement("br", null),
-	                _react2.default.createElement(ServiceChooser, { items: services })
-	            );
-	        }
-	    }]);
-	
-	    return Order;
-	}(_react.Component);
-	// This is more complex example that uses two components -
-	// a service chooser form, and the individual services inside it.
-	
-	
-	var ServiceChooser = _react2.default.createClass({
-	    displayName: "ServiceChooser",
-	
-	
-	    getInitialState: function getInitialState() {
-	        return { total: 0 };
-	    },
-	
-	    addTotal: function addTotal(price) {
-	        this.setState({ total: this.state.total + price });
-	    },
-	
-	    render: function render() {
-	        var self = this;
-	        var services = this.props.items.map(function (s, index) {
-	            // Create a new Service component for each item in the items array.
-	            // Notice that I pass the self.addTotal function to the component.
-	            return _react2.default.createElement(Service, { key: index, name: s.name, price: s.price, active: s.active, addTotal: self.addTotal });
-	        });
-	
-	        return _react2.default.createElement(
-	            "div",
-	            null,
-	            _react2.default.createElement(
-	                "h1",
-	                null,
-	                "Our services"
-	            ),
-	            _react2.default.createElement(
-	                "div",
-	                { id: "services" },
-	                services,
-	                _react2.default.createElement(
-	                    "p",
-	                    { id: "total" },
-	                    "Total ",
-	                    _react2.default.createElement(
-	                        "b",
-	                        null,
-	                        "$",
-	                        this.state.total.toFixed(2)
-	                    )
-	                )
-	            )
-	        );
-	    }
-	});
-	
-	var Service = _react2.default.createClass({
-	    displayName: "Service",
-	
-	    getInitialState: function getInitialState() {
-	        return { active: false };
-	    },
-	
-	    clickHandler: function clickHandler() {
-	        var active = !this.state.active;
-	        this.setState({ active: active });
-	        // Notify the ServiceChooser, by calling its addTotal method
-	        this.props.addTotal(active ? this.props.price : -this.props.price);
-	    },
-	
-	    render: function render() {
-	        return _react2.default.createElement(
-	            "p",
-	            { className: this.state.active ? 'active' : '', onClick: this.clickHandler },
-	            this.props.name,
-	            _react2.default.createElement(
-	                "b",
-	                null,
-	                "$",
-	                this.props.price.toFixed(2)
-	            )
-	        );
-	    }
-	
-	});
-	
-	var services = [{ name: 'Web Development', price: 300 }, { name: 'Web Front-end', price: 350 }, { name: 'Web Back-end', price: 500 }, { name: 'Design', price: 400 }, { name: 'Integration', price: 250 }, { name: 'Training', price: 220 }];
-	
-	exports.default = Order;
-
-/***/ },
-/* 240 */
-/*!************************************************!*\
-  !*** ./app/component/order.component/Title.js ***!
-  \************************************************/
+/* 234 */
+/*!***************************************************!*\
+  !*** ./app/component/orther.component/address.js ***!
+  \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27290,12 +28026,15 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.Query = exports.TwitterFeed = exports.Instagram = exports.Address = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 161);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -27305,848 +28044,73 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Title = function (_Component) {
-	    _inherits(Title, _Component);
+	var Address = function (_Component) {
+	    _inherits(Address, _Component);
 	
-	    function Title() {
-	        _classCallCheck(this, Title);
+	    function Address() {
+	        _classCallCheck(this, Address);
 	
-	        return _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Address.__proto__ || Object.getPrototypeOf(Address)).apply(this, arguments));
 	    }
 	
-	    _createClass(Title, [{
+	    _createClass(Address, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
 	                null,
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement(
+	                    _reactRouter.IndexLink,
+	                    { activeClassName: 'active', to: '/address/instagram' },
+	                    'Instagram Feed'
+	                ),
+	                '\xA0',
+	                _react2.default.createElement(
+	                    _reactRouter.IndexLink,
+	                    { activeClassName: 'active', to: { pathname: '/address/query', query: { message: 'Hello from Route Query' } } },
+	                    'router query'
+	                ),
+	                '\xA0',
 	                _react2.default.createElement(
 	                    'h1',
 	                    null,
-	                    'Hello from Title Component'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Title;
-	}(_react.Component);
-	
-	exports.default = Title;
-
-/***/ },
-/* 241 */,
-/* 242 */
-/*!************************************************!*\
-  !*** ./app/component/login.component/Login.js ***!
-  \************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 161);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Login = function (_Component) {
-	    _inherits(Login, _Component);
-	
-	    function Login(props) {
-	        _classCallCheck(this, Login);
-	
-	        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-	
-	        _this.state = { name: '', password: '' };
-	        _this.handleSubmit = _this.handleSubmit.bind(_this);
-	        _this.handleChange = _this.handleChange.bind(_this);
-	        _this.handleChange2 = _this.handleChange2.bind(_this);
-	        return _this;
-	    }
-	
-	    _createClass(Login, [{
-	        key: 'handleRedirect',
-	        value: function handleRedirect() {
-	            _reactRouter.browserHistory.push('/');
-	        }
-	    }, {
-	        key: 'handleSubmit',
-	        value: function handleSubmit() {
-	
-	            if (this.state.name === 'admin') {
-	                alert(this.state.name + "<br/> " + this.state.password);
-	            }
-	        }
-	    }, {
-	        key: 'handleChange',
-	        value: function handleChange(e) {
-	            this.setState({ name: e.target.value });
-	        }
-	    }, {
-	        key: 'handleChange2',
-	        value: function handleChange2(e) {
-	            this.setState({ password: e.target.value });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'container' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'col-md-6 col-md-offset-3' },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        { className: 'text-center' },
-	                        'Log In'
-	                    ),
-	                    _react2.default.createElement(
-	                        'form',
-	                        { onSubmit: this.handleSubmit },
-	                        _react2.default.createElement(
-	                            'fieldset',
-	                            { className: 'form-group' },
-	                            _react2.default.createElement(
-	                                'label',
-	                                null,
-	                                'Email'
-	                            ),
-	                            _react2.default.createElement('input', { className: 'form-control', type: 'text', value: this.state.name, onChange: this.handleChange, placeholder: 'Email' })
-	                        ),
-	                        _react2.default.createElement(
-	                            'fieldset',
-	                            { className: 'form-group' },
-	                            _react2.default.createElement(
-	                                'label',
-	                                null,
-	                                'Password'
-	                            ),
-	                            _react2.default.createElement('input', { className: 'form-control', type: 'password', value: this.state.password, onChange: this.handleChange2, placeholder: 'Password' })
-	                        ),
-	                        _react2.default.createElement(
-	                            'button',
-	                            { action: 'submit', className: 'btn btn-primary', onClick: this.handleRedirect.bind(this) },
-	                            'Sign In'
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Login;
-	}(_react.Component);
-	
-	exports.default = Login;
-
-/***/ },
-/* 243 */
-/*!**************************************************!*\
-  !*** ./app/component/nav.component/Container.js ***!
-  \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 161);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Container = function (_Component) {
-	    _inherits(Container, _Component);
-	
-	    function Container() {
-	        _classCallCheck(this, Container);
-	
-	        return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
-	    }
-	
-	    _createClass(Container, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(Nav, null),
+	                    'We are located at 555 Jackson St.'
+	                ),
 	                this.props.children
 	            );
 	        }
 	    }]);
 	
-	    return Container;
+	    return Address;
 	}(_react.Component);
 	
-	var Nav = function (_Component2) {
-	    _inherits(Nav, _Component2);
-	
-	    function Nav() {
-	        _classCallCheck(this, Nav);
-	
-	        return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
-	    }
-	
-	    _createClass(Nav, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'nav',
-	                    { className: 'navbar navbar-default' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'container-fluid' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'navbar-header' },
-	                            _react2.default.createElement(
-	                                _reactRouter.IndexLink,
-	                                { className: 'navbar-brand', activeClassName: 'active', to: '/' },
-	                                'Home'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
-	                            _react2.default.createElement(
-	                                'ul',
-	                                { className: 'nav navbar-nav' },
-	                                _react2.default.createElement(
-	                                    'li',
-	                                    null,
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        { activeClassName: 'active', to: '/address' },
-	                                        'Address'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    'li',
-	                                    null,
-	                                    '  ',
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        { activeClassName: 'active', to: '/about' },
-	                                        'About'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    'li',
-	                                    null,
-	                                    ' ',
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        { activeClassName: 'active', to: '/order' },
-	                                        'Order'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    'li',
-	                                    null,
-	                                    '  ',
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        { activeClassName: 'active', to: '/login' },
-	                                        'login'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    'li',
-	                                    null,
-	                                    '  ',
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        { activeClassName: 'active', to: '/cars' },
-	                                        'Car'
-	                                    )
-	                                )
-	                            )
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Nav;
-	}(_react.Component);
-	
-	exports.default = Container;
-
-/***/ },
-/* 244 */,
-/* 245 */
-/*!**************************************************!*\
-  !*** ./app/component/404.component/not-found.js ***!
-  \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var NotFound = function (_Component) {
-	    _inherits(NotFound, _Component);
-	
-	    function NotFound() {
-	        _classCallCheck(this, NotFound);
-	
-	        return _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).apply(this, arguments));
-	    }
-	
-	    _createClass(NotFound, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    '404.. This page is not found! haha'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return NotFound;
-	}(_react.Component);
-	
-	exports.default = NotFound;
-
-/***/ },
-/* 246 */
-/*!*********************************************!*\
-  !*** ./app/component/cars.component/car.js ***!
-  \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _reactDom = __webpack_require__(/*! react-dom */ 158);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRouter = __webpack_require__(/*! react-router */ 161);
-	
-	var _Popup = __webpack_require__(/*! ./Popup */ 237);
-	
-	var _Popup2 = _interopRequireDefault(_Popup);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ./src/car/car.component.jsx
-	
-	
-	var list;
-	
-	var Car = function (_Component) {
-	    _inherits(Car, _Component);
-	
-	    function Car() {
-	        _classCallCheck(this, Car);
-	
-	        return _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).apply(this, arguments));
-	    }
-	
-	    _createClass(Car, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'h3',
-	                    null,
-	                    'Welcome to the Cars Page in car.component'
-	                ),
-	                _react2.default.createElement(List, { items: this.props.route.data })
-	            );
-	        }
-	    }]);
-	
-	    return Car;
-	}(_react.Component);
-	
-	var FormAdd = function (_Component2) {
-	    _inherits(FormAdd, _Component2);
-	
-	    function FormAdd(props) {
-	        _classCallCheck(this, FormAdd);
-	
-	        var _this2 = _possibleConstructorReturn(this, (FormAdd.__proto__ || Object.getPrototypeOf(FormAdd)).call(this, props));
-	
-	        _this2.state = { obj: {}, type: {} };
-	        _this2.send = _this2.send.bind(_this2);
-	        _this2.close = _this2.close.bind(_this2);
-	        _this2.componentWillMount = _this2.componentWillMount.bind(_this2);
-	        _this2.componentDidMount = _this2.componentDidMount.bind(_this2);
-	        return _this2;
-	    }
-	
-	    _createClass(FormAdd, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.setState({
-	                type: this.props.type
-	            });
-	            // console.log(this.state.type);
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {
-	            this.setState({
-	                type: this.props.type
-	            });
-	            //console.log(this.state.type);
-	        }
-	    }, {
-	        key: 'send',
-	        value: function send() {
-	            var last_child = list.state.cars[list.state.cars.length - 1];
-	            var objnew = {};
-	            if (this.refs.media.value) {
-	                objnew.id = last_child.id + 1;
-	                //objnew.media = this.refs.media.value ? this.refs.media.value :"http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
-	                objnew.media = "http://media.ed.edmunds-media.com/bmw/x6/2016/oem/2016_bmw_x6_4dr-suv_xdrive50i_fq_oem_1_717.jpg";
-	                objnew.name = this.refs.name.value.length > 0 ? this.refs.name.value : 'no name';
-	                objnew.year = this.refs.year.value.length > 0 ? this.refs.year.value : 'null';
-	                objnew.model = this.refs.model.value.length > 0 ? this.refs.model.value : 'null';
-	                objnew.make = this.refs.make.value.length > 0 ? this.refs.make.value : 'null';
-	                objnew.price = this.refs.price.value.length > 0 ? this.refs.price.value : 'null';
-	                list.state.cars.unshift(objnew);
-	                list.setState(list.state.cars);
-	
-	                _reactDom2.default.unmountComponentAtNode(document.getElementById('addnode'));
-	            } else {
-	                alert('xin nhap media');
-	                return false;
-	            }
-	        }
-	    }, {
-	        key: 'close',
-	        value: function close() {
-	            _reactDom2.default.unmountComponentAtNode(document.getElementById('addnode'));
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            if (this.props.type == 'new') {
-	                return _react2.default.createElement(
-	                    'div',
-	                    { id: 'popup', className: 'overlay' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'popup' },
-	                        _react2.default.createElement(
-	                            'h2',
-	                            null,
-	                            'add new item '
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
-	                            '\xD7'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'content' },
-	                            'media: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'media', placeholder: 'media' }),
-	                            _react2.default.createElement('br', null),
-	                            'Name: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'name', placeholder: 'name' }),
-	                            _react2.default.createElement('br', null),
-	                            'Year: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'year', placeholder: 'year' }),
-	                            _react2.default.createElement('br', null),
-	                            'Model: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'model', placeholder: 'model' }),
-	                            _react2.default.createElement('br', null),
-	                            'Make: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'make', placeholder: 'make' }),
-	                            _react2.default.createElement('br', null),
-	                            'Price: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'price', placeholder: 'price' }),
-	                            _react2.default.createElement('br', null),
-	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.send.bind(this) })
-	                        )
-	                    )
-	                );
-	            }
-	            if (this.props.type == 'edit') {
-	                return _react2.default.createElement(
-	                    'div',
-	                    { id: 'popup', className: 'overlay' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'popup' },
-	                        _react2.default.createElement(
-	                            'h2',
-	                            null,
-	                            'edit item'
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
-	                            '\xD7'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'content' },
-	                            'media: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'media', placeholder: 'media' }),
-	                            _react2.default.createElement('br', null),
-	                            'Name: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'name', placeholder: 'name' }),
-	                            _react2.default.createElement('br', null),
-	                            'Year: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'year', placeholder: 'year' }),
-	                            _react2.default.createElement('br', null),
-	                            'Model: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'model', placeholder: 'model' }),
-	                            _react2.default.createElement('br', null),
-	                            'Make: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'make', placeholder: 'make' }),
-	                            _react2.default.createElement('br', null),
-	                            'Price: ',
-	                            _react2.default.createElement('input', { type: 'text', ref: 'price', placeholder: 'price' }),
-	                            _react2.default.createElement('br', null),
-	                            _react2.default.createElement('input', { type: 'button', value: 'Submit', onClick: this.send.bind(this) })
-	                        )
-	                    )
-	                );
-	            } else {
-	                return _react2.default.createElement(
-	                    'div',
-	                    { id: 'popup', className: 'overlay' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'popup' },
-	                        _react2.default.createElement(
-	                            'h2',
-	                            null,
-	                            'pleas insert type'
-	                        ),
-	                        _react2.default.createElement(
-	                            'a',
-	                            { className: 'close', onClick: this.close.bind(this) },
-	                            '\xD7'
-	                        )
-	                    )
-	                );
-	            }
-	        }
-	    }]);
-	
-	    return FormAdd;
-	}(_react.Component);
-	
-	var Addnode = function (_Component3) {
-	    _inherits(Addnode, _Component3);
-	
-	    function Addnode(props) {
-	        _classCallCheck(this, Addnode);
-	
-	        var _this3 = _possibleConstructorReturn(this, (Addnode.__proto__ || Object.getPrototypeOf(Addnode)).call(this, props));
-	
-	        _this3.addnode = _this3.addnode.bind(_this3);
-	        return _this3;
-	    }
-	
-	    _createClass(Addnode, [{
-	        key: 'addnode',
-	        value: function addnode() {
-	            _reactDom2.default.render(_react2.default.createElement(_Popup2.default, { type: 'new' }), document.getElementById('addnode'));
-	            //ReactDOM.render(<Popup type={'dedit'} />, document.getElementById('addnode'))
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'wrap__btn' },
-	                _react2.default.createElement(
-	                    'a',
-	                    { href: '#', className: 'btn btn-info btn__add', onClick: this.addnode },
-	                    '+'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Addnode;
-	}(_react.Component);
-	
-	var Delete = function (_Component4) {
-	    _inherits(Delete, _Component4);
-	
-	    function Delete(props) {
-	        _classCallCheck(this, Delete);
-	
-	        var _this4 = _possibleConstructorReturn(this, (Delete.__proto__ || Object.getPrototypeOf(Delete)).call(this, props));
-	
-	        _this4.deletenode = _this4.deletenode.bind(_this4);
-	        return _this4;
-	    }
-	
-	    _createClass(Delete, [{
-	        key: 'deletenode',
-	        value: function deletenode() {
-	            var arr = list.state.cars;
-	            var Idemove = this.props.nodeID;
-	            for (var i = 0; i < arr.length; i++) {
-	                if (arr[i].id == Idemove) {
-	                    arr.splice(i, 1); //removes 1 element at position i
-	                    list.setState(list.state.cars);
-	                    break;
-	                }
-	            }
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'wrap__btn' },
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'btn btn-danger', onClick: this.deletenode },
-	                    'Delete'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Delete;
-	}(_react.Component);
-	
-	var Edit = function (_Component5) {
-	    _inherits(Edit, _Component5);
-	
-	    function Edit(props) {
-	        _classCallCheck(this, Edit);
-	
-	        var _this5 = _possibleConstructorReturn(this, (Edit.__proto__ || Object.getPrototypeOf(Edit)).call(this, props));
-	
-	        _this5.editnode = _this5.editnode.bind(_this5);
-	        return _this5;
-	    }
-	
-	    _createClass(Edit, [{
-	        key: 'editnode',
-	        value: function editnode() {
-	            var arr = list.state.cars;
-	            var IdInsert = this.props.nodeID;
-	            var objnew = {};
-	            objnew.id = this.props.nodeID;
-	            objnew.media = '';
-	            objnew.name = 'add new';
-	            objnew.year = '';
-	            objnew.model = '';
-	            objnew.make = '';
-	            objnew.price = '';
-	            //ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
-	            _reactDom2.default.render(_react2.default.createElement(_Popup2.default, { type: 'edit' }), document.getElementById('addnode'));
-	            for (var i = 0; i < arr.length; i++) {
-	                if (arr[i].id == IdInsert) {
-	                    arr.splice(i, 1, objnew); //removes 1 element at position i
-	                    list.setState(list.state.cars);
-	                    break;
-	                }
-	            }
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'wrap__btn' },
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'btn btn-info', onClick: this.editnode },
-	                    'Edit'
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return Edit;
-	}(_react.Component);
-	
-	var List = function (_Component6) {
-	    _inherits(List, _Component6);
-	
-	    function List(props) {
-	        _classCallCheck(this, List);
-	
-	        var _this6 = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
-	
-	        _this6.state = { searchString: '', cars: [] };
-	        list = _this6;
-	        _this6.componentWillMount = _this6.componentWillMount.bind(_this6);
-	
-	        return _this6;
-	    }
-	
-	    _createClass(List, [{
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {
-	            this.state.cars = this.props.items;
-	            this.setState(this.state);
-	        }
-	    }, {
-	        key: 'handleChange',
-	        value: function handleChange(e) {
-	            this.setState({ searchString: e.target.value });
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            // Get data from Car items
-	            var cars = this.props.items,
-	                searchString = this.state.searchString.trim().toLowerCase();
-	            // Map through cars and return linked cars
-	            /*const carNode = cars.map((car) => {
-	             return (
-	             <IndexLink
-	             activeClassName='active'
-	             to={"/cars/"+car.id}
-	             className="list-group-item"
-	             key={car.id}>
-	             {car.name}
-	             </IndexLink>
-	             )
-	             });*/
-	
-	            if (searchString.length > 0) {
-	                this.state.cars = this.state.cars.filter(function (list) {
-	                    return list.name.toLowerCase().match(searchString);
-	                });
-	            } else {
-	                this.state.cars = this.props.items;
-	                // this.setState(this.state.cars);
-	            }
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    _react2.default.createElement('input', { type: 'text', value: this.state.searchString, className: 'text_box search-car',
-	                        onChange: this.handleChange.bind(this), placeholder: 'Type here' }),
-	                    _react2.default.createElement(Addnode, null)
-	                ),
-	                _react2.default.createElement('div', { id: 'addnode' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'items clearfix' },
-	                    this.state.cars.map(function (car) {
-	                        return _react2.default.createElement(
-	                            'div',
-	                            { className: 'list__group' },
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'col-md-6' },
-	                                _react2.default.createElement(
-	                                    'div',
-	                                    { className: 'wrap_item' },
-	                                    _react2.default.createElement(
-	                                        _reactRouter.IndexLink,
-	                                        {
-	                                            activeClassName: 'active',
-	                                            to: "/cars/" + car.id,
-	                                            className: 'item',
-	                                            key: car.id.toString() },
-	                                        _react2.default.createElement('img', { src: car.media, className: 'image_item', alt: 'image' })
-	                                    ),
-	                                    _react2.default.createElement(
-	                                        'div',
-	                                        { className: 'des__img' },
-	                                        _react2.default.createElement(
-	                                            'div',
-	                                            { className: 'name__item' },
-	                                            car.name
-	                                        ),
-	                                        _react2.default.createElement(Delete, { nodeID: car.id }),
-	                                        _react2.default.createElement(Edit, { nodeID: car.id })
-	                                    )
-	                                )
-	                            )
-	                        );
-	                    })
-	                )
-	            );
-	        }
-	    }]);
-	
-	    return List;
-	}(_react.Component);
-	
-	exports.default = Car;
+	var Instagram = function Instagram() {
+	    return _react2.default.createElement(
+	        'h3',
+	        null,
+	        'this is default page address Instagram Feed '
+	    );
+	};
+	var TwitterFeed = function TwitterFeed() {
+	    return _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Twitter Feed child of address'
+	    );
+	};
+	var Query = function Query(props) {
+	    return _react2.default.createElement(
+	        'h2',
+	        null,
+	        'show query: ',
+	        props.location.query.message
+	    );
+	};
+	exports.Address = Address;
+	exports.Instagram = Instagram;
+	exports.TwitterFeed = TwitterFeed;
+	exports.Query = Query;
 
 /***/ }
 /******/ ]);
