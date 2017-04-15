@@ -19,7 +19,8 @@ class CarDetail extends Component {
 
         return (
             <div>
-                <h1>{car[0].name}</h1>
+                <h1>this is page carDetail car.component</h1>
+                <h2>{car[0].name}</h2>
                 <div className="row">
                     <div className="col-sm-6 col-md-4">
                         <div className="thumbnail">

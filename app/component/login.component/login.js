@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { browserHistory } from 'react-router';
 class Login extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state={name:'',password:''};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);

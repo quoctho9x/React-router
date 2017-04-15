@@ -2,14 +2,14 @@
 import ReactDOM from 'react-dom'
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
-//import Popup from 'Popup';
+import Popup from './popup';
 
 var list;
 class Car extends Component {
     render() {
         return (
             <div>
-                <h3>Welcome to the Cars Page</h3>
+                <h3>Welcome to the Cars Page in car.component</h3>
                 <List items={this.props.route.data }/>
             </div>
         )
@@ -18,11 +18,24 @@ class Car extends Component {
 class FormAdd extends Component {
     constructor(props) {
         super(props)
-        this.state = {obj: {}}
+        this.state = {obj: {},type:{}}
         this.send=this.send.bind(this);
         this.close=this.close.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
-
+    componentDidMount() {
+        this.setState({
+            type: this.props.type
+        });
+       // console.log(this.state.type);
+    }
+    componentWillMount() {
+        this.setState({
+            type: this.props.type
+        });
+         //console.log(this.state.type);
+    }
     send() {
         var last_child = list.state.cars[list.state.cars.length - 1];
         var objnew = {};
@@ -50,26 +63,55 @@ class FormAdd extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Popup send ={this.send} close={this.close}/>
-            </div>
-       /* <div id="popup" className="overlay">
-           <div className="popup">
-                <h2>Here i am</h2>
-                <a className="close" onClick={this.close.bind(this)}>&times;</a>
-                <div className="content">
-                    media: <input type="text" ref="media" placeholder="media"/><br/>
-                    Name: <input type="text" ref="name" placeholder="name"/><br/>
-                    Year: <input type="text" ref="year" placeholder="year"/><br/>
-                    Model: <input type="text" ref="model" placeholder="model"/><br/>
-                    Make: <input type="text" ref="make" placeholder="make"/><br/>
-                    Price: <input type="text" ref="price" placeholder="price"/><br/>
-                    <input type="button" value="Submit" onClick={this.send.bind(this)}/>
+        if(this.props.type =='new'){
+            return (
+                <div id="popup" className="overlay">
+                    <div className="popup">
+                        <h2>add new item </h2>
+                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+                        <div className="content">
+                            media: <input type="text" ref="media" placeholder="media"/><br/>
+                            Name: <input type="text" ref="name" placeholder="name"/><br/>
+                            Year: <input type="text" ref="year" placeholder="year"/><br/>
+                            Model: <input type="text" ref="model" placeholder="model"/><br/>
+                            Make: <input type="text" ref="make" placeholder="make"/><br/>
+                            Price: <input type="text" ref="price" placeholder="price"/><br/>
+                            <input type="button" value="Submit" onClick={this.send.bind(this)}/>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>*/
-        )
+            )
+        }
+        if(this.props.type =='edit') {
+            return (
+                <div id="popup" className="overlay">
+                    <div className="popup">
+                        <h2>edit item</h2>
+                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+                        <div className="content">
+                            media: <input type="text" ref="media" placeholder="media"/><br/>
+                            Name: <input type="text" ref="name" placeholder="name"/><br/>
+                            Year: <input type="text" ref="year" placeholder="year"/><br/>
+                            Model: <input type="text" ref="model" placeholder="model"/><br/>
+                            Make: <input type="text" ref="make" placeholder="make"/><br/>
+                            Price: <input type="text" ref="price" placeholder="price"/><br/>
+                            <input type="button" value="Submit" onClick={this.send.bind(this)}/>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div id="popup" className="overlay">
+                    <div className="popup">
+                        <h2>pleas insert type</h2>
+                        <a className="close" onClick={this.close.bind(this)}>&times;</a>
+                    </div>
+                </div>
+            )
+        }
+
     }
 }
 class Addnode extends Component {
@@ -79,7 +121,8 @@ class Addnode extends Component {
     }
 
     addnode() {
-        ReactDOM.render(<FormAdd />, document.getElementById('addnode'))
+        ReactDOM.render(<Popup type={'new'} />, document.getElementById('addnode'))
+        //ReactDOM.render(<Popup type={'dedit'} />, document.getElementById('addnode'))
     }
 
     render() {
@@ -135,6 +178,7 @@ class Edit extends Component {
         objnew.make = '';
         objnew.price = '';
         //ReactDOM.unmountComponentAtNode(document.getElementById('addnode'))
+        ReactDOM.render(<Popup type={'edit'} />, document.getElementById('addnode'))
         for (var i = 0; i < arr.length; i++) {
             if (arr[i].id == IdInsert) {
                 arr.splice(i, 1, objnew);  //removes 1 element at position i
@@ -243,30 +287,6 @@ class List extends Component {
 }
 
 
-class Popup extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {obj: {}}
-    }
-    render() {
-        return (
-            <div id="popup" className="overlay">
-                <div className="popup">
-                    <h2>Here i am</h2>
-               <a className="close" onClick={this.close}>&times;</a>
-                    <div className="content">
-                        media: <input type="text" ref="media" placeholder="media"/><br/>
-                        Name: <input type="text" ref="name" placeholder="name"/><br/>
-                        Year: <input type="text" ref="year" placeholder="year"/><br/>
-                        Model: <input type="text" ref="model" placeholder="model"/><br/>
-                        Make: <input type="text" ref="make" placeholder="make"/><br/>
-                        Price: <input type="text" ref="price" placeholder="price"/><br/>
-                        <input type="button" value="Submit" onClick={this.send}/>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-}
+
 
 export default Car
