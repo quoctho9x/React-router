@@ -79,16 +79,7 @@ class Popup extends Component {
         var arr = list.state.cars;
         var IdInsert = this.props.nodeID;
         var objnew = {};
-        //console.log(list.state.cars);
-        // console.log(this.props.nodeID);
 
-        /* objnew.id = this.props.nodeID;
-         objnew.media = '';
-         objnew.name = 'add new';
-         objnew.year = '';
-         objnew.model = '';
-         objnew.make = '';
-         objnew.price = '';*/
         for (var i = 0; i < arr.length; i++) {
             if (arr[i].id == IdInsert) {
                 objnew = arr[i];
@@ -120,16 +111,46 @@ class Popup extends Component {
             return (
                 <div id="popup" className="overlay">
                     <div className="popup">
-                        <h2>car.component add new item </h2>
+                        <h3>Create new item </h3>
                         <a className="close" onClick={this.close}>&times;</a>
-                        <div className="content">
-                            media: <input type="text" ref="media" placeholder="media"/><br/>
-                            Name: <input type="text" ref="name" placeholder="name"/><br/>
-                            Year: <input type="text" ref="year" placeholder="year"/><br/>
-                            Model: <input type="text" ref="model" placeholder="model"/><br/>
-                            Make: <input type="text" ref="make" placeholder="make"/><br/>
-                            Price: <input type="text" ref="price" placeholder="price"/><br/>
-                            <input type="button" value="Submit" onClick={this.addNewNode}/>
+                        <div className="content form-horizontal">
+                            <div className="form-group">
+                                <label className="control-label col-sm-2">media:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="media" placeholder="media" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Name:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="name" placeholder="name" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Year:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control"  ref="year" placeholder="year"/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2">Model:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="model" placeholder="model" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Make:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="make" placeholder="make" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Price:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="price" placeholder="price" />
+                                </div>
+                            </div>
+                            <input type="button" className="btn btn-default" value="Submit" onClick={this.addNewNode}/>
                         </div>
                     </div>
                 </div>
@@ -139,26 +160,66 @@ class Popup extends Component {
             return (
                 <div id="popup" className="overlay">
                     <div className="popup">
-                        <h2>car.component edit item </h2>
+                        <h3>Edit item </h3>
                         <a className="close" onClick={this.close}>&times;</a>
-                        <div className="content">
-                            media: <input type="text" value={this.state.objmedia} ref="media"/><br/>
-                            Name: <input type="text" defaultValue={this.state.objname} ref="name"/><br/>
-                            Year: <input type="text" defaultValue={this.state.objyear} ref="year"/><br/>
-                            Model: <input type="text" defaultValue={this.state.objmodel} ref="model"/><br/>
-                            Make: <input type="text" defaultValue={this.state.objmake} ref="make"/><br/>
-                            Price: <input type="text" defaultValue={this.state.objprice} ref="price"/><br/>
-                            <input type="button" value="Submit" onClick={this.editNode}/>
+                        <div className="content form-horizontal">
+                            <div className="form-group">
+                                <label className="control-label col-sm-2">media:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="media"  value={this.state.objmedia}  />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Name:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="name"  defaultValue={this.state.objname} />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Year:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control"  ref="year" defaultValue={this.state.objyear}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2">Model:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="model" defaultValue={this.state.objmodel}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Make:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="make" defaultValue={this.state.objmake} />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label className="control-label col-sm-2" >Price:</label>
+                                <div className="col-sm-10">
+                                    <input type="text" className="form-control" ref="price"defaultValue={this.state.objprice}/>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                            <div className="col-sm-6">
+                                <input type="button" className="btn btn-primary" value="Save" onClick={this.editNode} />
+                            </div>
+                            <div className="col-sm-6">
+                                <input type="button" className="btn btn-danger" value="cancel" onClick={this.close} />
+                            </div>
+                            </div>
+
+
                         </div>
+
                     </div>
                 </div>
             )
         }
-        else {
+        if (this.props.type == 'remove') {
             return (
-                <div id="popup" className="overlay">
+                <div id="popup" className="overlay ">
                     <div className="popup">
-                        <h2>pleas insert type</h2>
+                        <h2>this cars is remove</h2>
                         <a className="close" onClick={this.close}>&times;</a>
                     </div>
                 </div>
