@@ -1,5 +1,24 @@
 import React, {Component} from 'react'
 
+import TrackList from './components/TrackList';
+import {configureStore} from './store';
+import * as actions from './actions';
+
+//khoi tao bien
+const tracks = [
+    {
+        id: 1,
+        title: 'Em của ngày hôm qua'
+    },
+    {
+        id: 2,
+        title: 'Cơn mưa ngang qua'
+    }
+];
+//khoi tao store
+const store = configureStore();
+store.dispatch(actions.setTracks(tracks));//chua gan vao su kien nao cua view het <TrackList />
+
 class Home extends Component {
     constructor(props) {
         super(props)
