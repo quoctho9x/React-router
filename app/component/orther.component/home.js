@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
+//react dom khong can o day
+import TrackList from '../tracklist.component/index';
+import {configureStore} from '../../store';
+import * as actions from '../../action';
+import {Provider} from 'react-redux';
 
-import TrackList from './components/TrackList';
-import {configureStore} from './store';
-import * as actions from './actions';
-
+//Provider giúp cho chúng ta có thể truy cập store cũng như tất cả những function của nó ở tất cả các component con
 //khoi tao bien
 const tracks = [
-    {
-        id: 1,
-        title: 'Em của ngày hôm qua'
-    },
-    {
-        id: 2,
-        title: 'Cơn mưa ngang qua'
-    }
+    {id: 1, title: '1 Hello World', content: 'Welcome to learning React!'},
+    {id: 2, title: '2 How to learn', content: 'read document about react'},
+    {id: 3, title: '3 what is first', content: 'start with Component, state, props...'},
+    {id: 4, title: '4 Installation', content: 'You can install React from npm.'}
 ];
 //khoi tao store
 const store = configureStore();
-store.dispatch(actions.setTracks(tracks));//chua gan vao su kien nao cua view het <TrackList />
+//store.dispatch(actions.setTracks(tracks));
+
+
 
 class Home extends Component {
     constructor(props) {
@@ -59,6 +59,14 @@ class Home extends Component {
         return (
             <div>
                 <h1>Hello Home page!</h1>
+                /*them redux vao day nhe*/
+                <Provider store={store}>
+                    <div>
+                        <input  onClick={() => {store.dispatch(actions.setTracks(tracks));}} value='showlist'/>
+                        <TrackList  />
+                    </div>
+
+                </Provider>
                 <h2>Timer {this.state.date.toLocaleTimeString()}</h2>
                 <Child bien={this.state.bien}/>
                 <Button update={this.update} value={this.state.isToggleOn ? 'Show list' : 'hide list'}/>
