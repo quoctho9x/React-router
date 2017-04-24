@@ -62,7 +62,7 @@ class Home extends Component {
                 /*them redux vao day nhe*/
                 <Provider store={store}>
                     <div>
-                        <input  onClick={() => {store.dispatch(actions.setTracks(tracks));}} value='showlist'/>
+                        <input type="button" onClick={() => {store.dispatch(actions.setTracks(tracks));store.dispatch(actions.increaseCounter());}} value={'Show List'}/>
                         <TrackList  />
                     </div>
 

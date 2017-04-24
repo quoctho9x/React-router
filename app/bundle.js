@@ -20268,31 +20268,31 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _order = __webpack_require__(/*! ./component/order.component/order */ 285);
+	var _order = __webpack_require__(/*! ./component/order.component/order */ 287);
 	
 	var _order2 = _interopRequireDefault(_order);
 	
-	var _title = __webpack_require__(/*! ./component/order.component/title */ 286);
+	var _title = __webpack_require__(/*! ./component/order.component/title */ 288);
 	
 	var _title2 = _interopRequireDefault(_title);
 	
-	var _about = __webpack_require__(/*! ./component/orther.component/about */ 287);
+	var _about = __webpack_require__(/*! ./component/orther.component/about */ 289);
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _login = __webpack_require__(/*! ./component/login.component/login */ 288);
+	var _login = __webpack_require__(/*! ./component/login.component/login */ 290);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _car = __webpack_require__(/*! ./component/cars.component/car */ 289);
+	var _car = __webpack_require__(/*! ./component/cars.component/car */ 291);
 	
 	var _car2 = _interopRequireDefault(_car);
 	
-	var _cardetail = __webpack_require__(/*! ./component/cars.component/cardetail */ 291);
+	var _cardetail = __webpack_require__(/*! ./component/cars.component/cardetail */ 293);
 	
 	var _cardetail2 = _interopRequireDefault(_cardetail);
 	
-	var _address = __webpack_require__(/*! ./component/orther.component/address */ 292);
+	var _address = __webpack_require__(/*! ./component/orther.component/address */ 294);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26576,7 +26576,7 @@
 	
 	var _store = __webpack_require__(/*! ../../store */ 273);
 	
-	var _action = __webpack_require__(/*! ../../action */ 283);
+	var _action = __webpack_require__(/*! ../../action */ 284);
 	
 	var actions = _interopRequireWildcard(_action);
 	
@@ -26668,13 +26668,9 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        null,
-	                        _react2.default.createElement(
-	                            'button',
-	                            { onClick: function onClick() {
-	                                    store.dispatch(actions.setTracks(tracks));
-	                                } },
-	                            ' Show list'
-	                        ),
+	                        _react2.default.createElement('input', { type: 'button', onClick: function onClick() {
+	                                store.dispatch(actions.setTracks(tracks));store.dispatch(actions.increaseCounter());
+	                            }, value: 'Show List' }),
 	                        _react2.default.createElement(_index2.default, null)
 	                    )
 	                ),
@@ -29999,14 +29995,6 @@
 	
 	    _createClass(TrackList, [{
 	        key: 'render',
-	
-	        /* static propTypes = {
-	             tracks: PropTypes.array
-	         };
-	           static defaultProps = {
-	             tracks: []
-	         };*/
-	
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
@@ -30995,20 +30983,22 @@
 	
 	var _tracks2 = _interopRequireDefault(_tracks);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _counter = __webpack_require__(/*! ./counter */ 283);
 	
-	//track day la component tracklist.js
+	var _counter2 = _interopRequireDefault(_counter);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/*Thông thường bạn sẽ phải export từng reducer, reducer đó sẽ phải trả về toàn bộ state của application.
 	Khi sử dụng combineReducers, bạn có thể sử dụng multiple reducer mỗi reducer sẽ trả về một substate.
 	Nếu không sử dụng nó bạn sẽ phải access list tracks trong global state như thế này.*/
+	exports.default = (0, _redux.combineReducers)({
+	  //doi track thanh tracks
+	  tracks: _tracks2.default, counter: _counter2.default
+	}); //track day la component tracklist.js ?
 	/**
 	 * Created by quoctho.nguyen on 20/4/2017.
 	 */
-	exports.default = (0, _redux.combineReducers)({
-	  //doi track thanh tracks
-	  tracks: _tracks2.default
-	});
 
 /***/ }),
 /* 281 */
@@ -31030,6 +31020,7 @@
 	    switch (action.type) {
 	        case _constants.ActionTypes.TRACKS_SET:
 	            return setTracks(state, action);
+	
 	        default:
 	            return state;
 	    }
@@ -31070,11 +31061,51 @@
 	 */
 	//tao Action Types, sử dụng bởi cả reducer và action.
 	var ActionTypes = exports.ActionTypes = {
-	  TRACKS_SET: 'TRACKS_SET'
+	  TRACKS_SET: 'TRACKS_SET',
+	  INCREASE_COUNTER: 'INCREASE_COUNTER'
 	};
 
 /***/ }),
 /* 283 */
+/*!*********************************!*\
+  !*** ./app/reducers/counter.js ***!
+  \*********************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	exports.default = function () {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	    var action = arguments[1];
+	
+	    switch (action.type) {
+	        case _constants.ActionTypes.INCREASE_COUNTER:
+	            //state.counter  += action.volume;
+	            console.log(state.counter);
+	            return [].concat(_toConsumableArray(state), [state.counter]);
+	
+	        default:
+	            return state;
+	    }
+	};
+	
+	var _constants = __webpack_require__(/*! ../core/constants */ 282);
+	
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } /**
+	                                                                                                                                                                                                     * Created by quoctho.nguyen on 24/4/2017.
+	                                                                                                                                                                                                     */
+	
+	
+	//reducer nhận vào type và payload action trả về
+	var initialState = { counter: 0 };
+	//export một anonymous function Reducer sẽ nhận vào một state và action như tôi đã nói từ trước
+
+/***/ }),
+/* 284 */
 /*!*****************************!*\
   !*** ./app/action/index.js ***!
   \*****************************/
@@ -31085,18 +31116,22 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.setTracks = undefined;
+	exports.increaseCounter = exports.setTracks = undefined;
 	
-	var _tracks = __webpack_require__(/*! ./tracks */ 284);
+	var _tracks = __webpack_require__(/*! ./tracks */ 285);
+	
+	var _counter = __webpack_require__(/*! ./counter */ 286);
 	
 	/*Trong file này chúng ta sẽ bundle tất cả các action creator mà chúng ta có và export chúng ra như là một public interface cho các phần còn lại sử dụng.*/
-	exports.setTracks = _tracks.setTracks; /**
-	                                        * Created by quoctho.nguyen on 20/4/2017.
-	                                        */
+	/**
+	 * Created by quoctho.nguyen on 20/4/2017.
+	 */
 	//tạo một file index.js trong folder actions để chứa tất cả các action creator
+	exports.setTracks = _tracks.setTracks;
+	exports.increaseCounter = _counter.increaseCounter;
 
 /***/ }),
-/* 284 */
+/* 285 */
 /*!******************************!*\
   !*** ./app/action/tracks.js ***!
   \******************************/
@@ -31124,7 +31159,32 @@
 	//day la nhung action, Action Creators
 
 /***/ }),
-/* 285 */
+/* 286 */
+/*!*******************************!*\
+  !*** ./app/action/counter.js ***!
+  \*******************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.increaseCounter = increaseCounter;
+	
+	var _constants = __webpack_require__(/*! ../core/constants */ 282);
+	
+	function increaseCounter() {
+	  var volume = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+	
+	  return { type: _constants.ActionTypes.INCREASE_COUNTER, volume: volume };
+	} /**
+	   * Created by quoctho.nguyen on 24/4/2017.
+	   */
+	//day la nhung action, Action Creators
+
+/***/ }),
+/* 287 */
 /*!************************************************!*\
   !*** ./app/component/order.component/order.js ***!
   \************************************************/
@@ -31261,7 +31321,7 @@
 	exports.default = Order;
 
 /***/ }),
-/* 286 */
+/* 288 */
 /*!************************************************!*\
   !*** ./app/component/order.component/title.js ***!
   \************************************************/
@@ -31317,7 +31377,7 @@
 	exports.default = Title;
 
 /***/ }),
-/* 287 */
+/* 289 */
 /*!*************************************************!*\
   !*** ./app/component/orther.component/about.js ***!
   \*************************************************/
@@ -31448,7 +31508,7 @@
 	exports.default = About;
 
 /***/ }),
-/* 288 */
+/* 290 */
 /*!************************************************!*\
   !*** ./app/component/login.component/login.js ***!
   \************************************************/
@@ -31568,7 +31628,7 @@
 	exports.default = Login;
 
 /***/ }),
-/* 289 */
+/* 291 */
 /*!*********************************************!*\
   !*** ./app/component/cars.component/car.js ***!
   \*********************************************/
@@ -31592,7 +31652,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 161);
 	
-	var _popup = __webpack_require__(/*! ./popup */ 290);
+	var _popup = __webpack_require__(/*! ./popup */ 292);
 	
 	var _popup2 = _interopRequireDefault(_popup);
 	
@@ -31851,7 +31911,7 @@
 	exports.default = Car;
 
 /***/ }),
-/* 290 */
+/* 292 */
 /*!***********************************************!*\
   !*** ./app/component/cars.component/popup.js ***!
   \***********************************************/
@@ -32259,7 +32319,7 @@
 	exports.default = Popup;
 
 /***/ }),
-/* 291 */
+/* 293 */
 /*!***************************************************!*\
   !*** ./app/component/cars.component/cardetail.js ***!
   \***************************************************/
@@ -32412,7 +32472,7 @@
 	exports.default = CarDetail;
 
 /***/ }),
-/* 292 */
+/* 294 */
 /*!***************************************************!*\
   !*** ./app/component/orther.component/address.js ***!
   \***************************************************/

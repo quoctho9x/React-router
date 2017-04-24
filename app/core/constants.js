@@ -3,5 +3,6 @@
  */
 //tao Action Types, sử dụng bởi cả reducer và action.
 export const ActionTypes  = {
-    TRACKS_SET:'TRACKS_SET'
+    TRACKS_SET:'TRACKS_SET',
+    INCREASE_COUNTER:'INCREASE_COUNTER'
 }
