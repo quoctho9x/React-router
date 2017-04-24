@@ -10,5 +10,6 @@ Khi sử dụng combineReducers, bạn có thể sử dụng multiple reducer m�
 Nếu không sử dụng nó bạn sẽ phải access list tracks trong global state như thế này.*/
 export default combineReducers({
     //doi track thanh tracks
+    //day la object lon phia ben ngoai console.
     tracks, counter
 });

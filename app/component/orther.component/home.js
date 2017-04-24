@@ -20,7 +20,7 @@ const store = configureStore();
 
 
 class Home extends Component {
-    constructor(props) {
+   /* constructor(props) {
         super(props)
         this.state = {bien: 'toggle', date: new Date(), isToggleOn: true};
 
@@ -53,7 +53,7 @@ class Home extends Component {
             isToggleOn: !prevState.isToggleOn
         }));
 
-    }
+    }*/
 
     render() {
         return (
@@ -67,19 +67,19 @@ class Home extends Component {
                     </div>
 
                 </Provider>
-                <h2>Timer {this.state.date.toLocaleTimeString()}</h2>
+               {/* <h2>Timer {this.state.date.toLocaleTimeString()}</h2>
                 <Child bien={this.state.bien}/>
                 <Button update={this.update} value={this.state.isToggleOn ? 'Show list' : 'hide list'}/>
                 <div>
                     <h2>demo list</h2>
                     <Blog posts={posts}/>
                 </div>
-
+*/}
             </div>
         )
     }
 }
-
+/*
 class Button extends Component {
     constructor(props) {
         super(props)
@@ -103,7 +103,7 @@ class Child extends Component {
     }
 }
 
-/*demo list*/
+/!*demo list*!/
 function Blog(props) {
     const sidebar = (
         <ul>
@@ -122,7 +122,7 @@ function Blog(props) {
     );
     return (
         <div>
-            {/* {sidebar}*/}
+            {/!* {sidebar}*!/}
             <hr />
             {content}
         </div>
@@ -134,6 +134,6 @@ const posts = [
     {id: 2, title: '2 How to learn', content: 'read document about react'},
     {id: 3, title: '3 what is first', content: 'start with Component, state, props...'},
     {id: 4, title: '4 Installation', content: 'You can install React from npm.'}
-];
+];*/
 export default Home
 
