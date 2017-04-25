@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 //react dom khong can o day
 import TrackList from '../tracklist.component/index';
 import {configureStore} from '../../store';
-import * as actions from '../../action';
+import * as actions from '../../redux/action';
 import {Provider} from 'react-redux';
 
 //Provider giúp cho chúng ta có thể truy cập store cũng như tất cả những function của nó ở tất cả các component con

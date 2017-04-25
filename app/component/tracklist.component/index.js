@@ -3,5 +3,4 @@
  */
 import {connect} from 'react-redux';
 import TrackList from './tracklist';
-
-export default connect(({tracks}) => ({tracks}))(TrackList);
+export default connect(({listtracks}) => ({listtracks}))(TrackList);

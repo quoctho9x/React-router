@@ -13,13 +13,12 @@ import React, {Component, PropTypes} from 'react';
  @connect(({tracks}) => ({tracks}), {})
  export default class TrackList extends Component {}
  */
-
 export default class TrackList extends Component {
      render() {
         return (
             <div>
                 {
-                    this.props.tracks.map((track, key) => {
+                    this.props.listtracks.map((track, key) => {
                         return <div key={key}>Track: {track.title}</div>;
                     })
                 }
