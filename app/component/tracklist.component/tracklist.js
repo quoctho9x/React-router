@@ -16,7 +16,10 @@ import {Provider} from 'react-redux';// add them
  @connect(({tracks}) => ({tracks}), {})
  export default class TrackList extends Component {}
  */
-const store = configureStore();// add them
+// const store = configureStore();// add them
+
+
+
 export default class TrackList extends Component {
      render() {
         return (
@@ -34,8 +37,8 @@ export default class TrackList extends Component {
                 {//this.props.listtracks props nay duoc lay tu listtracks tu fn connect trong index tracklist.component. va traclist nay duoc lay tu  tracklist index cua reducers
                      this.props.listtracks.map((track, key) => {
                         return <tr className="table--tr--custom" key={key}>
-                                    <td>{track.title}</td>
-                                    <td> <input type="button" className="btn btn-danger" value="Delete"/></td>
+                            <td>{track.title}</td>
+                                    <td> <input type="button" className="btn btn-danger" value="Delete" onClick={() => { this.props.dispatch(actions.deleteId(track.id));}}/></td>
                                </tr>;})
                 }
                 </tbody>

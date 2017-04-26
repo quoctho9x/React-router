@@ -10,9 +10,8 @@ export default function (state=initialState,action) {
         case ActionTypes.TRACKS_SET:
             return setTracks(state,action);
         case ActionTypes.ADD_LIST:
-            if(action.text.trim() != '')
+            if(action.text.trim() !== '')
             {
-                console.log(state);
                 return [{
                     id: (state.length === 0) ? 0 : state[0].id + 1,
                     title: action.text,
@@ -24,7 +23,7 @@ export default function (state=initialState,action) {
                 return [...state];
             }
         case ActionTypes.DELETE_ID:
-            //console.log(todo.id);
+            console.log(state);
            return state.filter((todo) => todo.id !== action.id);
         case ActionTypes.EDIT_ID:
             //console.log(todo.id);

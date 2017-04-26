@@ -65,12 +65,11 @@ class Home extends Component {
                                 <input type="text" className="form-control" ref="name" placeholder="insert note please"/>
                                 <span className="input-group-btn">
                                 <button className="btn btn-secondary" type="button" onClick={() => {store.dispatch(actions.addList(this.refs.name.value));this.refs.name.value="";}}>Add List</button>
-                                <button className="btn btn-secondary" type="button"  onClick={() => {store.dispatch(actions.deleteId(1));}}>Remove list</button>
                             </span>
                             </div>
                         </div>
                        {/* <Counter/>*/}
-                        <TrackList />
+                        <TrackList store={store} />
                     </div>
 
                 </Provider>
