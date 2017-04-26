@@ -2,7 +2,7 @@
  * Created by quoctho.nguyen on 20/4/2017.
  */
 import {combineReducers} from 'redux';
-import tracks from './tracks';//track day la component tracklist.js ?
+import tracks from './tracks';
 import counter from './counter';
 
 /*Thông thường bạn sẽ phải export từng reducer, reducer đó sẽ phải trả về toàn bộ state của application.

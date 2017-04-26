@@ -12,3 +12,21 @@ export function setTracks(tracks) {
         tracks
     }
 }
+export function addList(text) {
+    return{
+        type:ActionTypes.ADD_LIST,text
+    }
+    
+}
+export function deleteId(id) {
+    return{
+        type:ActionTypes.DELETE_ID,id
+    }
+
+}
+export function editID(id) {
+    return{
+        type:ActionTypes.EDIT_ID,id
+    }
+
+}

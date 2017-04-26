@@ -9,7 +9,26 @@ export default function (state=initialState,action) {
     switch (action.type){
         case ActionTypes.TRACKS_SET:
             return setTracks(state,action);
-
+        case ActionTypes.ADD_LIST:
+            if(action.text.trim() != '')
+            {
+                console.log(state);
+                return [{
+                    id: (state.length === 0) ? 0 : state[0].id + 1,
+                    title: action.text,
+                    content: action.text
+                }, ...state];
+            }
+            else {
+                alert('input is not null');
+                return [...state];
+            }
+        case ActionTypes.DELETE_ID:
+            //console.log(todo.id);
+           return state.filter((todo) => todo.id !== action.id);
+        case ActionTypes.EDIT_ID:
+            //console.log(todo.id);
+           return state;
 
         default:
             return state;

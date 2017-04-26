@@ -20268,31 +20268,31 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _order = __webpack_require__(/*! ./component/order.component/order */ 287);
+	var _order = __webpack_require__(/*! ./component/order.component/order */ 289);
 	
 	var _order2 = _interopRequireDefault(_order);
 	
-	var _title = __webpack_require__(/*! ./component/order.component/title */ 288);
+	var _title = __webpack_require__(/*! ./component/order.component/title */ 290);
 	
 	var _title2 = _interopRequireDefault(_title);
 	
-	var _about = __webpack_require__(/*! ./component/orther.component/about */ 289);
+	var _about = __webpack_require__(/*! ./component/orther.component/about */ 291);
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _login = __webpack_require__(/*! ./component/login.component/login */ 290);
+	var _login = __webpack_require__(/*! ./component/login.component/login */ 292);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _car = __webpack_require__(/*! ./component/cars.component/car */ 291);
+	var _car = __webpack_require__(/*! ./component/cars.component/car */ 293);
 	
 	var _car2 = _interopRequireDefault(_car);
 	
-	var _cardetail = __webpack_require__(/*! ./component/cars.component/cardetail */ 293);
+	var _cardetail = __webpack_require__(/*! ./component/cars.component/cardetail */ 295);
 	
 	var _cardetail2 = _interopRequireDefault(_cardetail);
 	
-	var _address = __webpack_require__(/*! ./component/orther.component/address */ 294);
+	var _address = __webpack_require__(/*! ./component/orther.component/address */ 296);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26574,6 +26574,10 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
+	var _container = __webpack_require__(/*! ../counter/container */ 287);
+	
+	var _container2 = _interopRequireDefault(_container);
+	
 	var _store = __webpack_require__(/*! ../../store */ 273);
 	
 	var _action = __webpack_require__(/*! ../../redux/action */ 284);
@@ -26596,7 +26600,7 @@
 	
 	//Provider giúp cho chúng ta có thể truy cập store cũng như tất cả những function của nó ở tất cả các component con
 	//khoi tao bien
-	var tracks = [{ id: 1, title: '1 Hello World', content: 'Welcome to learning React!' }, { id: 2, title: '2 How to learn', content: 'read document about react' }, { id: 3, title: '3 what is first', content: 'start with Component, state, props...' }, { id: 4, title: '4 Installation', content: 'You can install React from npm.' }];
+	var tracks = [{ id: 1, title: 'Hello World', content: 'Welcome to learning React!' }, { id: 2, title: 'How to learn', content: 'read document about react' }, { id: 3, title: 'what is first', content: 'start with Component, state, props...' }, { id: 4, title: 'Installation', content: 'You can install React from npm.' }];
 	//khoi tao store
 	var store = (0, _store.configureStore)();
 	//store.dispatch(actions.setTracks(tracks));
@@ -26605,45 +26609,47 @@
 	var Home = function (_Component) {
 	    _inherits(Home, _Component);
 	
-	    function Home() {
+	    function Home(props) {
 	        _classCallCheck(this, Home);
 	
-	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+	
+	        _this.state = { bien: 'toggle', date: new Date(), isToggleOn: true };
+	
+	        _this.componentDidMount = _this.componentDidMount.bind(_this);
+	        /*  this.componentWillUnmount = this.componentWillUnmount.bind(this);
+	         this.tick = this.tick.bind(this);
+	         this.update = this.update.bind(this);*/
+	        return _this;
 	    }
 	
 	    _createClass(Home, [{
-	        key: 'render',
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            store.dispatch(actions.setTracks(tracks));
+	            console.log('run');
+	        }
 	
-	        /* constructor(props) {
-	             super(props)
-	             this.state = {bien: 'toggle', date: new Date(), isToggleOn: true};
-	               this.componentDidMount = this.componentDidMount.bind(this);
-	             this.componentWillUnmount = this.componentWillUnmount.bind(this);
-	             this.tick = this.tick.bind(this);
-	             this.update = this.update.bind(this);
-	         }
-	           componentDidMount() {
-	             this.timerID = setInterval(
-	                 () => this.tick(),
-	                 1000
-	             );
-	         }
-	           componentWillUnmount() {
-	             clearInterval(this.timerID);
+	        /* componentWillUnmount() {
+	         clearInterval(this.timerID);
 	         }
 	           tick() {
-	             this.setState({
-	                 date: new Date()
-	             });
+	         this.setState({
+	         date: new Date()
+	         });
 	         }
 	           update() {
-	             this.setState(prevState => ({
-	                 bien: 'toggle active',
-	                 isToggleOn: !prevState.isToggleOn
-	             }));
+	         this.setState(prevState => ({
+	         bien: 'toggle active',
+	         isToggleOn: !prevState.isToggleOn
+	         }));
 	           }*/
 	
+	    }, {
+	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+	
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -26652,16 +26658,39 @@
 	                    null,
 	                    'Hello Home page!'
 	                ),
-	                '/*them redux vao day nhe*/',
 	                _react2.default.createElement(
 	                    _reactRedux.Provider,
 	                    { store: store },
 	                    _react2.default.createElement(
 	                        'div',
 	                        null,
-	                        _react2.default.createElement('input', { type: 'button', onClick: function onClick() {
-	                                store.dispatch(actions.setTracks(tracks));store.dispatch(actions.increaseCounter());
-	                            }, value: 'Show List' }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'wrap-input-group' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'input-group' },
+	                                _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'name', placeholder: 'insert note please' }),
+	                                _react2.default.createElement(
+	                                    'span',
+	                                    { className: 'input-group-btn' },
+	                                    _react2.default.createElement(
+	                                        'button',
+	                                        { className: 'btn btn-secondary', type: 'button', onClick: function onClick() {
+	                                                store.dispatch(actions.addList(_this2.refs.name.value));_this2.refs.name.value = "";
+	                                            } },
+	                                        'Add List'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'button',
+	                                        { className: 'btn btn-secondary', type: 'button', onClick: function onClick() {
+	                                                store.dispatch(actions.deleteId(1));
+	                                            } },
+	                                        'Remove list'
+	                                    )
+	                                )
+	                            )
+	                        ),
 	                        _react2.default.createElement(_index2.default, null)
 	                    )
 	                )
@@ -26672,61 +26701,61 @@
 	    return Home;
 	}(_react.Component);
 	/*
-	class Button extends Component {
-	    constructor(props) {
-	        super(props)
-	    }
+	 class Button extends Component {
+	 constructor(props) {
+	 super(props)
+	 }
 	
-	    render() {
-	        return (
-	            <input className="btn btn-default" onClick={this.props.update} type="button" value={this.props.value}/>
-	        )
-	    }
-	}
-	class Child extends Component {
-	    constructor(props) {
-	        super(props)
-	    }
+	 render() {
+	 return (
+	 <input className="btn btn-default" onClick={this.props.update} type="button" value={this.props.value}/>
+	 )
+	 }
+	 }
+	 class Child extends Component {
+	 constructor(props) {
+	 super(props)
+	 }
 	
-	    render() {
-	        return (
-	            <span>Button {this.props.bien}: </span>
-	        )
-	    }
-	}
+	 render() {
+	 return (
+	 <span>Button {this.props.bien}: </span>
+	 )
+	 }
+	 }
 	
-	/!*demo list*!/
-	function Blog(props) {
-	    const sidebar = (
-	        <ul>
-	            {props.posts.map((post) =>
-	                <li key={post.id}>
-	                    {post.title}
-	                </li>
-	            )}
-	        </ul>
-	    );
-	    const content = props.posts.map((post) =>
-	        <div key={post.id}>
-	            <h3>{post.title}</h3>
-	            <p>{post.content}</p>
-	        </div>
-	    );
-	    return (
-	        <div>
-	            {/!* {sidebar}*!/}
-	            <hr />
-	            {content}
-	        </div>
-	    );
-	}
+	 /!*demo list*!/
+	 function Blog(props) {
+	 const sidebar = (
+	 <ul>
+	 {props.posts.map((post) =>
+	 <li key={post.id}>
+	 {post.title}
+	 </li>
+	 )}
+	 </ul>
+	 );
+	 const content = props.posts.map((post) =>
+	 <div key={post.id}>
+	 <h3>{post.title}</h3>
+	 <p>{post.content}</p>
+	 </div>
+	 );
+	 return (
+	 <div>
+	 {/!* {sidebar}*!/}
+	 <hr />
+	 {content}
+	 </div>
+	 );
+	 }
 	
-	const posts = [
-	    {id: 1, title: '1 Hello World', content: 'Welcome to learning React!'},
-	    {id: 2, title: '2 How to learn', content: 'read document about react'},
-	    {id: 3, title: '3 what is first', content: 'start with Component, state, props...'},
-	    {id: 4, title: '4 Installation', content: 'You can install React from npm.'}
-	];*/
+	 const posts = [
+	 {id: 1, title: '1 Hello World', content: 'Welcome to learning React!'},
+	 {id: 2, title: '2 How to learn', content: 'read document about react'},
+	 {id: 3, title: '3 what is first', content: 'start with Component, state, props...'},
+	 {id: 4, title: '4 Installation', content: 'You can install React from npm.'}
+	 ];*/
 	
 	
 	exports.default = Home;
@@ -26756,8 +26785,8 @@
 	 * Created by quoctho.nguyen on 21/4/2017.
 	 */
 	exports.default = (0, _reactRedux.connect)(function (_ref) {
-	  var listtracksnew = _ref.listtracksnew;
-	  return { listtracksnew: listtracksnew };
+	  var listtracks = _ref.listtracks;
+	  return { listtracks: listtracks };
 	})(_tracklist2.default);
 
 /***/ }),
@@ -29898,7 +29927,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29906,6 +29935,16 @@
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _store = __webpack_require__(/*! ../../store */ 273);
+	
+	var _action = __webpack_require__(/*! ../../redux/action */ 284);
+	
+	var actions = _interopRequireWildcard(_action);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 228);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29916,8 +29955,11 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by quoctho.nguyen on 21/4/2017.
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	// add them
+	// add them
 	
 	
+	// add them
 	/*Nó sẽ nhận kết quả trả về của function connect là một function, function đó sẽ nhận vào tham số là component TrackList.
 	 Sau đó đem tất cả trả về cho component cha, component cha sẽ có thể truy xuất store, trong khi TrackList sẽ chỉ là component hiển thị dữ liệu.
 	 Thêm vào đó, function connect sẽ nhận vào tham số là một function làm nhiều vụ mapping global state vào props của component,
@@ -29929,34 +29971,76 @@
 	 @connect(({tracks}) => ({tracks}), {})
 	 export default class TrackList extends Component {}
 	 */
+	var store = (0, _store.configureStore)(); // add them
+	
 	var TrackList = function (_Component) {
-	    _inherits(TrackList, _Component);
+	  _inherits(TrackList, _Component);
 	
-	    function TrackList() {
-	        _classCallCheck(this, TrackList);
+	  function TrackList() {
+	    _classCallCheck(this, TrackList);
 	
-	        return _possibleConstructorReturn(this, (TrackList.__proto__ || Object.getPrototypeOf(TrackList)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (TrackList.__proto__ || Object.getPrototypeOf(TrackList)).apply(this, arguments));
+	  }
+	
+	  _createClass(TrackList, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'table',
+	            { className: 'table table--custom' },
+	            _react2.default.createElement(
+	              'thead',
+	              null,
+	              _react2.default.createElement(
+	                'tr',
+	                { className: 'table--th--custom' },
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'List'
+	                ),
+	                _react2.default.createElement(
+	                  'th',
+	                  null,
+	                  'Button'
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'tbody',
+	              null,
+	              //this.props.listtracks props nay duoc lay tu listtracks tu fn connect trong index tracklist.component. va traclist nay duoc lay tu  tracklist index cua reducers
+	              this.props.listtracks.map(function (track, key) {
+	                return _react2.default.createElement(
+	                  'tr',
+	                  { className: 'table--tr--custom', key: key },
+	                  _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    track.title
+	                  ),
+	                  _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    ' ',
+	                    _react2.default.createElement('input', { type: 'button', className: 'btn btn-danger', value: 'Delete' })
+	                  )
+	                );
+	              })
+	            )
+	          )
+	        )
+	      );
 	    }
+	  }]);
 	
-	    _createClass(TrackList, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                this.props.listtracks.map(function (track, key) {
-	                    return _react2.default.createElement(
-	                        'div',
-	                        { key: key },
-	                        'Track: ',
-	                        track.title
-	                    );
-	                })
-	            );
-	        }
-	    }]);
-	
-	    return TrackList;
+	  return TrackList;
 	}(_react.Component);
 	
 	exports.default = TrackList;
@@ -30941,10 +31025,9 @@
 	    //doi track thanh tracks
 	    //day la object lon phia ben ngoai console.
 	    listtracks: _tracks2.default, counter: _counter2.default
-	}); //track day la component tracklist.js ?
-	/**
-	 * Created by quoctho.nguyen on 20/4/2017.
-	 */
+	}); /**
+	     * Created by quoctho.nguyen on 20/4/2017.
+	     */
 
 /***/ }),
 /* 281 */
@@ -30966,6 +31049,26 @@
 	    switch (action.type) {
 	        case _constants.ActionTypes.TRACKS_SET:
 	            return setTracks(state, action);
+	        case _constants.ActionTypes.ADD_LIST:
+	            if (action.text.trim() != '') {
+	                console.log(state);
+	                return [{
+	                    id: state.length === 0 ? 0 : state[0].id + 1,
+	                    title: action.text,
+	                    content: action.text
+	                }].concat(_toConsumableArray(state));
+	            } else {
+	                alert('input is not null');
+	                return [].concat(_toConsumableArray(state));
+	            }
+	        case _constants.ActionTypes.DELETE_ID:
+	            //console.log(todo.id);
+	            return state.filter(function (todo) {
+	                return todo.id !== action.id;
+	            });
+	        case _constants.ActionTypes.EDIT_ID:
+	            //console.log(todo.id);
+	            return state;
 	
 	        default:
 	            return state;
@@ -31001,15 +31104,18 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	/**
 	 * Created by quoctho.nguyen on 20/4/2017.
 	 */
 	//tao Action Types, sử dụng bởi cả reducer và action.
 	var ActionTypes = exports.ActionTypes = {
-	  TRACKS_SET: 'TRACKS_SET',
-	  INCREASE_COUNTER: 'INCREASE_COUNTER'
+	    TRACKS_SET: 'TRACKS_SET',
+	    ADD_LIST: 'ADD_LIST',
+	    DELETE_ID: 'DELETE_ID',
+	    EDIT_ID: 'EDIT_ID',
+	    INCREASE_COUNTER: 'INCREASE_COUNTER'
 	};
 
 /***/ }),
@@ -31062,7 +31168,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.increaseCounter = exports.setTracks = undefined;
+	exports.increaseCounter = exports.editID = exports.deleteId = exports.addList = exports.setTracks = undefined;
 	
 	var _tracks = __webpack_require__(/*! ./tracks */ 285);
 	
@@ -31074,6 +31180,9 @@
 	 */
 	//tạo một file index.js trong folder actions để chứa tất cả các action creator
 	exports.setTracks = _tracks.setTracks;
+	exports.addList = _tracks.addList;
+	exports.deleteId = _tracks.deleteId;
+	exports.editID = _tracks.editID;
 	exports.increaseCounter = _counter.increaseCounter;
 
 /***/ }),
@@ -31089,6 +31198,9 @@
 	    value: true
 	});
 	exports.setTracks = setTracks;
+	exports.addList = addList;
+	exports.deleteId = deleteId;
+	exports.editID = editID;
 	
 	var _constants = __webpack_require__(/*! ../core/constants */ 282);
 	
@@ -31103,6 +31215,21 @@
 	   * Created by quoctho.nguyen on 20/4/2017.
 	   */
 	//day la nhung action, Action Creators
+	function addList(text) {
+	    return {
+	        type: _constants.ActionTypes.ADD_LIST, text: text
+	    };
+	}
+	function deleteId(id) {
+	    return {
+	        type: _constants.ActionTypes.DELETE_ID, id: id
+	    };
+	}
+	function editID(id) {
+	    return {
+	        type: _constants.ActionTypes.EDIT_ID, id: id
+	    };
+	}
 
 /***/ }),
 /* 286 */
@@ -31131,6 +31258,90 @@
 
 /***/ }),
 /* 287 */
+/*!********************************************!*\
+  !*** ./app/component/counter/container.js ***!
+  \********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 228);
+	
+	var _counter = __webpack_require__(/*! ./counter */ 288);
+	
+	var _counter2 = _interopRequireDefault(_counter);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by quoctho.nguyen on 26/4/2017.
+	 */
+	exports.default = (0, _reactRedux.connect)(function (_ref) {
+	  var counter = _ref.counter;
+	  return { counter: counter };
+	})(_counter2.default);
+
+/***/ }),
+/* 288 */
+/*!******************************************!*\
+  !*** ./app/component/counter/counter.js ***!
+  \******************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by quoctho.nguyen on 26/4/2017.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Counter = function (_Component) {
+	    _inherits(Counter, _Component);
+	
+	    function Counter() {
+	        _classCallCheck(this, Counter);
+	
+	        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+	    }
+	
+	    _createClass(Counter, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                this.props.counter
+	            );
+	        }
+	    }]);
+	
+	    return Counter;
+	}(_react.Component);
+	
+	exports.default = Counter;
+
+/***/ }),
+/* 289 */
 /*!************************************************!*\
   !*** ./app/component/order.component/order.js ***!
   \************************************************/
@@ -31267,7 +31478,7 @@
 	exports.default = Order;
 
 /***/ }),
-/* 288 */
+/* 290 */
 /*!************************************************!*\
   !*** ./app/component/order.component/title.js ***!
   \************************************************/
@@ -31323,7 +31534,7 @@
 	exports.default = Title;
 
 /***/ }),
-/* 289 */
+/* 291 */
 /*!*************************************************!*\
   !*** ./app/component/orther.component/about.js ***!
   \*************************************************/
@@ -31454,7 +31665,7 @@
 	exports.default = About;
 
 /***/ }),
-/* 290 */
+/* 292 */
 /*!************************************************!*\
   !*** ./app/component/login.component/login.js ***!
   \************************************************/
@@ -31574,7 +31785,7 @@
 	exports.default = Login;
 
 /***/ }),
-/* 291 */
+/* 293 */
 /*!*********************************************!*\
   !*** ./app/component/cars.component/car.js ***!
   \*********************************************/
@@ -31598,7 +31809,7 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 161);
 	
-	var _popup = __webpack_require__(/*! ./popup */ 292);
+	var _popup = __webpack_require__(/*! ./popup */ 294);
 	
 	var _popup2 = _interopRequireDefault(_popup);
 	
@@ -31857,7 +32068,7 @@
 	exports.default = Car;
 
 /***/ }),
-/* 292 */
+/* 294 */
 /*!***********************************************!*\
   !*** ./app/component/cars.component/popup.js ***!
   \***********************************************/
@@ -32265,7 +32476,7 @@
 	exports.default = Popup;
 
 /***/ }),
-/* 293 */
+/* 295 */
 /*!***************************************************!*\
   !*** ./app/component/cars.component/cardetail.js ***!
   \***************************************************/
@@ -32418,7 +32629,7 @@
 	exports.default = CarDetail;
 
 /***/ }),
-/* 294 */
+/* 296 */
 /*!***************************************************!*\
   !*** ./app/component/orther.component/address.js ***!
   \***************************************************/
