@@ -2,9 +2,9 @@
  * Created by quoctho.nguyen on 21/4/2017.
  */
 import React, {Component, PropTypes} from 'react';
-import {configureStore} from '../../store';// add them
 import * as actions from '../../redux/action';// add them
-import {Provider} from 'react-redux';// add them
+import ReactDOM from 'react-dom';
+import Popup from '../tracklist.component/popup'
 /*Nó sẽ nhận kết quả trả về của function connect là một function, function đó sẽ nhận vào tham số là component TrackList.
  Sau đó đem tất cả trả về cho component cha, component cha sẽ có thể truy xuất store, trong khi TrackList sẽ chỉ là component hiển thị dữ liệu.
  Thêm vào đó, function connect sẽ nhận vào tham số là một function làm nhiều vụ mapping global state vào props của component,
@@ -21,6 +21,9 @@ import {Provider} from 'react-redux';// add them
 
 
 export default class TrackList extends Component {
+    editNode() {
+        document.getElementById('popup').style.display = 'block';
+    }
      render() {
         return (
 
@@ -38,7 +41,10 @@ export default class TrackList extends Component {
                      this.props.listtracks.map((track, key) => {
                         return <tr className="table--tr--custom" key={key}>
                             <td>{track.title}</td>
-                                    <td> <input type="button" className="btn btn-danger" value="Delete" onClick={() => { this.props.dispatch(actions.deleteId(track.id));}}/></td>
+                                    <td>
+                                        <input type="button" className="btn btn-danger" value="Delete" onClick={() => { this.props.dispatch(actions.deleteId(track.id));}}/>
+                                        <input type="button" className="btn btn-info" value="Edit" onClick={() => { this.props.dispatch(actions.getItem(track));this.editNode();}}/>
+                                    </td>
                                </tr>;})
                 }
                 </tbody>

@@ -30,3 +30,10 @@ export function editID(id) {
     }
 
 }
+export function getItem(item) {
+    return{
+        type:ActionTypes.GET_ITEM,item
+    }
+
+}
+

@@ -2,6 +2,8 @@
  * Created by quoctho.nguyen on 20/4/2017.
  */
 import {ActionTypes} from '../core/constants';
+import ReactDOM from 'react-dom';
+import Popup from '../../component/tracklist.component/popup'
 //reducer nhận vào type và payload action trả về
 const initialState = [];
 //export một anonymous function Reducer sẽ nhận vào một state và action như tôi đã nói từ trước
@@ -23,11 +25,21 @@ export default function (state=initialState,action) {
                 return [...state];
             }
         case ActionTypes.DELETE_ID:
-            console.log(state);
            return state.filter((todo) => todo.id !== action.id);
         case ActionTypes.EDIT_ID:
-            //console.log(todo.id);
-           return state;
+           // ReactDOM.render(<Popup type={'edit'} />, document.getElementById('popup'));
+            let objnew = {};
+            for (let i = 0; i < state.length; i++) {
+                if (state[i].id == action.id) {
+                    objnew.id = action.id;
+                    objnew.title = 'tho';
+                    objnew.content =  'tho';
+                    state.splice(i, 1, objnew);  //removes 1 element at position i
+                    //console.log(state);
+                    break;
+                }
+            }
+            return [...state];
 
         default:
             return state;

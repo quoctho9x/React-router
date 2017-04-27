@@ -4,4 +4,4 @@
 import {connect} from 'react-redux';
 import TrackList from './tracklist';
 import Popup from './popup';
-export default connect(({listtracks}) => ({listtracks}))(TrackList );
+export default connect(({listtracks}) => ({listtracks}))(Popup);

@@ -213,7 +213,9 @@ ul.list__about li:hover {
     visibility: visible;
     opacity: 1;
 }*/
-
+#popup{
+    display: none;
+}
 .popup {
     margin: 70px auto;
     padding: 20px;
@@ -253,6 +255,9 @@ ul.list__about li:hover {
     width: 250px;
     margin: 0px auto;
     display: block;
+}
+.wrap-input-group .input-group {
+   z-index: 0;
 }
 
 .table--custom {
