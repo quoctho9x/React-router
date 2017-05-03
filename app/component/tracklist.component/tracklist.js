@@ -34,12 +34,14 @@ export default class TrackList extends Component {
                     <tr className="table--th--custom">
                         <th>List</th>
                         <th>Button</th>
+                        <th>Id</th>
                     </tr>
                     </thead>
                     <tbody>
                 {//this.props.listtracks props nay duoc lay tu listtracks tu fn connect trong index tracklist.component. va traclist nay duoc lay tu  tracklist index cua reducers
                      this.props.listtracks.map((track, key) => {
                         return <tr className="table--tr--custom" key={key}>
+                            <td>{track.id}</td>
                             <td>{track.title}</td>
                                     <td>
                                         <input type="button" className="btn btn-danger" value="Delete" onClick={() => { this.props.dispatch(actions.deleteId(track.id));}}/>
@@ -55,3 +57,5 @@ export default class TrackList extends Component {
         )
     }
 }
+
+

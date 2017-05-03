@@ -4,18 +4,37 @@ import * as actions from '../../redux/action';
 class Popup extends Component {
     constructor(props) {
         super(props);
-        this.componentDidMount = this.componentDidMount.bind(this);
+        this.state = {obj:{}};
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+        this.edit = this.edit.bind(this);
+        this.close = this.close.bind(this);
+        this.handleChangeText = this.handleChangeText.bind(this);
+        this.handleChangeContent = this.handleChangeContent.bind(this);
+    }
+    componentWillReceiveProps(newProps) {
+         this.setState({
+         obj: newProps.item
+         });
     }
 
-    componentDidMount() {
-        console.log(this.props);
+    handleChangeText(event) {
+        this.state.obj.title = event.target.value;
+        this.setState(this.state);
     }
-    componentWillReceiveProps() {
-        console.log(this.props);
+    handleChangeContent(event) {
+        this.state.obj.content = event.target.value;
+        this.setState(this.state);
     }
     close() {
         document.getElementById('popup').style.display = 'none';
+    }
+    edit(){
+        let objnew = {};
+        objnew.id = (this.refs.id.value.length > 0) ? this.refs.id.value : this.refs.id.value;
+        objnew.title = (this.refs.title.value.length > 0) ? this.refs.title.value : 'nul';
+        objnew.content = (this.refs.content.value.length > 0) ? this.refs.content.value : 'null';
+
+        this.props.dispatch(actions.editID(objnew));
     }
 
     render() {
@@ -69,37 +88,38 @@ class Popup extends Component {
             )
         }
         if (this.props.type == 'edit') {
+
             return (
                 <div id="popup" className="overlay">
                     <div className="popup">
                         <h3>Edit item </h3>
-                        <a className="close" onClick={this.close}>&times;</a>
+                        <a className="close" onClick={() => {this.close();}}>&times;</a>
                         <div className="content form-horizontal">
                             <div className="form-group">
                                 <label className="control-label col-sm-4">ID:</label>
                                 <div className="col-sm-8">
-                                    <input type="text" className="form-control" ref="media"  value=''  />
+                                    <input type="text" className="form-control" ref="id" value={this.props.item.id}/>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label className="control-label col-sm-4" >Title:</label>
                                 <div className="col-sm-8">
-                                    <input type="text" className="form-control" ref="title"  />
+                                    <input type="text" className="form-control" ref="title" value={this.state.obj.title} onChange={this.handleChangeText} />
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label className="control-label col-sm-4 ">Context:</label>
+                                <label className="control-label col-sm-4 ">Content:</label>
                                 <div className="col-sm-8">
-                                    <input type="text" className="form-control"  ref="context" />
+                                    <input type="text" className="form-control"  ref="content" value={this.state.obj.content} onChange={this.handleChangeContent} />
                                 </div>
                             </div>
 
                             <div className="form-group">
                             <div className="col-sm-6">
-                                <input type="button" className="btn btn-primary" value="Save"  onClick={() => {this.props.dispatch(actions.editID('1'));}} />
+                                <input type="button" className="btn btn-primary" value="Save"  onClick= {() => {this.edit();this.close()}} />
                             </div>
                             <div className="col-sm-6">
-                                <input type="button" className="btn btn-danger" value="cancel" onClick={this.close} />
+                                <input type="button" className="btn btn-danger" value="cancel" onClick={() => {this.close();}} />
                             </div>
                             </div>
 

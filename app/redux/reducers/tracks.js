@@ -29,11 +29,12 @@ export default function (state=initialState,action) {
         case ActionTypes.EDIT_ID:
            // ReactDOM.render(<Popup type={'edit'} />, document.getElementById('popup'));
             let objnew = {};
+           console.log(action.object);
             for (let i = 0; i < state.length; i++) {
-                if (state[i].id == action.id) {
-                    objnew.id = action.id;
-                    objnew.title = 'tho';
-                    objnew.content =  'tho';
+                if (state[i].id == action.object.id) {
+                    objnew.id = action.object.id;
+                    objnew.title = action.object.title;
+                    objnew.content =  action.object.content;
                     state.splice(i, 1, objnew);  //removes 1 element at position i
                     //console.log(state);
                     break;

@@ -24,9 +24,9 @@ export function deleteId(id) {
     }
 
 }
-export function editID(id) {
+export function editID(object) {
     return{
-        type:ActionTypes.EDIT_ID,id
+        type:ActionTypes.EDIT_ID,object
     }
 
 }

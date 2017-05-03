@@ -29946,6 +29946,11 @@
 	                                    'th',
 	                                    null,
 	                                    'Button'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'th',
+	                                    null,
+	                                    'Id'
 	                                )
 	                            )
 	                        ),
@@ -29957,6 +29962,11 @@
 	                                return _react2.default.createElement(
 	                                    'tr',
 	                                    { className: 'table--tr--custom', key: key },
+	                                    _react2.default.createElement(
+	                                        'td',
+	                                        null,
+	                                        track.id
+	                                    ),
 	                                    _react2.default.createElement(
 	                                        'td',
 	                                        null,
@@ -30057,9 +30067,9 @@
 	        type: _constants.ActionTypes.DELETE_ID, id: id
 	    };
 	}
-	function editID(id) {
+	function editID(object) {
 	    return {
-	        type: _constants.ActionTypes.EDIT_ID, id: id
+	        type: _constants.ActionTypes.EDIT_ID, object: object
 	    };
 	}
 	function getItem(item) {
@@ -30159,25 +30169,48 @@
 	
 	        var _this = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
 	
-	        _this.componentDidMount = _this.componentDidMount.bind(_this);
+	        _this.state = { obj: {} };
 	        _this.componentWillReceiveProps = _this.componentWillReceiveProps.bind(_this);
+	        _this.edit = _this.edit.bind(_this);
+	        _this.close = _this.close.bind(_this);
+	        _this.handleChangeText = _this.handleChangeText.bind(_this);
+	        _this.handleChangeContent = _this.handleChangeContent.bind(_this);
 	        return _this;
 	    }
 	
 	    _createClass(Popup, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            console.log(this.props);
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(newProps) {
+	            this.setState({
+	                obj: newProps.item
+	            });
 	        }
 	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps() {
-	            console.log(this.props);
+	        key: 'handleChangeText',
+	        value: function handleChangeText(event) {
+	            this.state.obj.title = event.target.value;
+	            this.setState(this.state);
+	        }
+	    }, {
+	        key: 'handleChangeContent',
+	        value: function handleChangeContent(event) {
+	            this.state.obj.content = event.target.value;
+	            this.setState(this.state);
 	        }
 	    }, {
 	        key: 'close',
 	        value: function close() {
 	            document.getElementById('popup').style.display = 'none';
+	        }
+	    }, {
+	        key: 'edit',
+	        value: function edit() {
+	            var objnew = {};
+	            objnew.id = this.refs.id.value.length > 0 ? this.refs.id.value : this.refs.id.value;
+	            objnew.title = this.refs.title.value.length > 0 ? this.refs.title.value : 'nul';
+	            objnew.content = this.refs.content.value.length > 0 ? this.refs.content.value : 'null';
+	
+	            this.props.dispatch(actions.editID(objnew));
 	        }
 	    }, {
 	        key: 'render',
@@ -30294,6 +30327,7 @@
 	                );
 	            }
 	            if (this.props.type == 'edit') {
+	
 	                return _react2.default.createElement(
 	                    'div',
 	                    { id: 'popup', className: 'overlay' },
@@ -30307,7 +30341,9 @@
 	                        ),
 	                        _react2.default.createElement(
 	                            'a',
-	                            { className: 'close', onClick: this.close },
+	                            { className: 'close', onClick: function onClick() {
+	                                    _this2.close();
+	                                } },
 	                            '\xD7'
 	                        ),
 	                        _react2.default.createElement(
@@ -30324,7 +30360,7 @@
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'col-sm-8' },
-	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'media', value: '' })
+	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'id', value: this.props.item.id })
 	                                )
 	                            ),
 	                            _react2.default.createElement(
@@ -30338,7 +30374,7 @@
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'col-sm-8' },
-	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'title' })
+	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'title', value: this.state.obj.title, onChange: this.handleChangeText })
 	                                )
 	                            ),
 	                            _react2.default.createElement(
@@ -30347,12 +30383,12 @@
 	                                _react2.default.createElement(
 	                                    'label',
 	                                    { className: 'control-label col-sm-4 ' },
-	                                    'Context:'
+	                                    'Content:'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'col-sm-8' },
-	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'context' })
+	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: 'content', value: this.state.obj.content, onChange: this.handleChangeContent })
 	                                )
 	                            ),
 	                            _react2.default.createElement(
@@ -30362,13 +30398,15 @@
 	                                    'div',
 	                                    { className: 'col-sm-6' },
 	                                    _react2.default.createElement('input', { type: 'button', className: 'btn btn-primary', value: 'Save', onClick: function onClick() {
-	                                            _this2.props.dispatch(actions.editID('1'));
+	                                            _this2.edit();_this2.close();
 	                                        } })
 	                                ),
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'col-sm-6' },
-	                                    _react2.default.createElement('input', { type: 'button', className: 'btn btn-danger', value: 'cancel', onClick: this.close })
+	                                    _react2.default.createElement('input', { type: 'button', className: 'btn btn-danger', value: 'cancel', onClick: function onClick() {
+	                                            _this2.close();
+	                                        } })
 	                                )
 	                            )
 	                        )
@@ -31514,11 +31552,12 @@
 	        case _constants.ActionTypes.EDIT_ID:
 	            // ReactDOM.render(<Popup type={'edit'} />, document.getElementById('popup'));
 	            var objnew = {};
+	            console.log(action.object);
 	            for (var i = 0; i < state.length; i++) {
-	                if (state[i].id == action.id) {
-	                    objnew.id = action.id;
-	                    objnew.title = 'tho';
-	                    objnew.content = 'tho';
+	                if (state[i].id == action.object.id) {
+	                    objnew.id = action.object.id;
+	                    objnew.title = action.object.title;
+	                    objnew.content = action.object.content;
 	                    state.splice(i, 1, objnew); //removes 1 element at position i
 	                    //console.log(state);
 	                    break;
@@ -31669,8 +31708,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = (0, _reactRedux.connect)(function (_ref) {
-	  var listtracks = _ref.listtracks;
-	  return { listtracks: listtracks };
+	  var listtracks = _ref.listtracks,
+	      item = _ref.item;
+	  return { listtracks: listtracks, item: item };
 	})(_popup2.default); /**
 	                      * Created by quoctho.nguyen on 21/4/2017.
 	                      */
